@@ -1,0 +1,330 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+{% block body_block %}
+<!-- Top Carousel - Mobile, Furniture and Women Wear -->
+<div id="myCarousel" class="carousel1 carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <!-- Top Carousel -->
+        <!-- Mobile -->
+        <div class="item pic active first">
+            <table>
+                <tr>
+                    <td>
+                        <img src="{% static 'images/navbar_carousel/Mobile Carousel.png' %}" alt="mobile"
+                            class="top-carousel">
+                    </td>
+                    <td>
+                        <h3>The NEW Generation <strong>NOKIA</strong> is here</h3>
+                        <br>
+                        <h4>48MP Quad Camera</h4>
+                        <br>
+                        <h4>Starting just Rs 14, 999</h4>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!-- Furniture Carousel -->
+        <div class="item pic second">
+            <table>
+                <tr>
+                    <td>
+                        <img src="{% static 'images/navbar_carousel/Furniture Carousel.png' %}" alt="furniture"
+                            class="top-carousel">
+                    </td>
+                    <td class="furniture">
+                        <h3>Design your home with the </h3>
+                        <br>
+                        <h3>all new </h3>
+                        <br>
+                        <h3><strong>SMART FURNITURE</strong></h3>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!-- Women Wear Carousel -->
+        <div class="item pic third">
+            <table>
+                <tr>
+                    <td>
+                        <img src="{% static 'images/navbar_carousel/Women Wear.png' %}" alt="women-wear"
+                            class="top-carousel">
+                    </td>
+                    <td>
+                        <h3>Slay everyone at your office</h3>
+                        <br>
+                        <h3>with the all new trendy collection</h3>
+                        <br>
+                        <h3>exclusively available on <strong>SHOPTASTIC</strong></h3>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!-- Carousel Controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class=" glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>
+
+<table>
+    <tr>
+        <td>
+            <!--thumbnail carousel 1-->
+            <div class="display">
+                <div class="row">
+                    <div class="col-md-8 col-sm-8 col-xs-8">
+                        <h3>Mobiles</h3>
+                        <div id="nail" class="carousel2 carousel slide" data-ride="carousel" data-interval="0">
+                            <!-- Carousel indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="nail" data-slide-to="0" class="active"></li>
+                                <li data-target="#nail" data-slide-to="1"></li>
+                                <li data-target="#nail" data-slide-to="2"></li>
+                            </ol>
+                            <!--  carousel items -->
+                            <div class="carousel-inner">
+                                <!-- One Plus, Redmi 9 Power, and Samsung Galaxy M51 -->
+                                <div class="item carousel-item active">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <a href="{% url 'Mobiles:oneplus' %}" class=""><img
+                                                    src="{% static 'images/index_carousel/onepluseightpro.jpeg' %}"
+                                                    class="nail-img img-responsive img-fluid carousel-image"
+                                                    alt="One Plus 8 Pro 5G"></a>
+                                        </div>
+                                        <div class="hidden-xs col-sm-4">
+
+                                            <a href="{% url 'Mobiles:redmi9power' %}" class=""><img
+                                                    src="{% static 'images/index_carousel/redmi9power.jpeg' %}"
+                                                    alt="Redmi 9 Power"
+                                                    class="nail-img img-responsive img-fluid carousel-image"></a>
+                                        </div>
+                                        <div class="hidden-xs col-sm-4">
+                                            <a href="{% url 'Mobiles:samsunggalaxym51' %}" class=""><img
+                                                    src="{% static 'images/index_carousel/samsunggalaxym51.jpeg' %}"
+                                                    alt="Samsung Galaxy M51"
+                                                    class="nail-img img-responsive img-fluid carousel-image"></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- IPhone 12, Nokia 3.4, and Vivo Y20 -->
+                                <div class="item carousel-item">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+
+                                            <a href="{% url 'Mobiles:iphone12mini' %}"><img
+                                                    src="{% static 'images/index_carousel/iphone12mini.jpeg' %}"
+                                                    class="nail-img img-responsive img-fluid carousel-image"
+                                                    alt="IPhone 12 Mini"></a>
+
+                                        </div>
+                                        <div class="hidden-xs col-sm-4">
+
+                                            <a href="{% url 'Mobiles:nokia3.4' %}"><img
+                                                    src="{% static 'images/index_carousel/nokia3.4.jpeg' %}"
+                                                    class="nail-img img-responsive img-fluid carousel-image"
+                                                    alt="Nokia 3.4"></a>
+
+                                        </div>
+                                        <div class="hidden-xs col-sm-4">
+                                            <a href="{% url 'Mobiles:vivoy20' %}"><img
+                                                    src="{% static 'images/index_carousel/vivoy20.jpeg' %}"
+                                                    class="nail-img img-responsive img-fluid carousel-image"
+                                                    alt="Vivo Y20"></a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Carousel controls -->
+                            <a class="carousel-control left" href="#nail" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="carousel-control right" href="#nail" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--thumbnail carousel 2-->
+            <div class="display">
+                <div class="row">
+                    <div class="col-md-8 col-sm-8 col-xs-8">
+                        <h3>Furniture</h3>
+                        <div id="nail1" class="carousel2 carousel slide" data-ride="carousel" data-interval="0">
+                            <!-- Carousel indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="nail1" data-slide-to="0" class="active"></li>
+                                <li data-target="#nail1" data-slide-to="1"></li>
+                                <li data-target="#nail1" data-slide-to="2"></li>
+                            </ol>
+                            <!--  carousel items -->
+                            <div class="carousel-inner">
+                                <div class="item carousel-item active">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+
+                                            <a href="#" class=""><img
+                                                    src="{% static 'images/index_carousel/mdfwalldecoration.jpg' %}"
+                                                    class="nail-img img-responsive img-fluid carousel-image"
+                                                    alt="MDF Wall Decoration"></a>
+                                        </div>
+                                        <div class="hidden-xs col-sm-4">
+
+                                            <a href="#" class=""><img
+                                                    src="{% static 'images/index_carousel/woodensquarestool.jpg' %}"
+                                                    alt="Furniture Cafe Wooden Square Stool"
+                                                    class="nail-img img-responsive img-fluid carousel-image"></a>
+                                        </div>
+                                        <div class="hidden-xs col-sm-4">
+                                            <a href="#" class=""><img
+                                                    src="{% static 'images/index_carousel/woodkeyholder.jpg' %}"
+                                                    alt="A10Shop Omega 6 Wood Key Holder"
+                                                    class="nail-img img-responsive img-fluid carousel-image"></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item carousel-item">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+
+                                            <a href="#"><img
+                                                    src="{% static 'images/index_carousel/wallmountedstoragecase.jpg' %}"
+                                                    class="nail-img img-responsive img-fluid carousel-image"
+                                                    alt="OShop 4pcs Wall Mounted Storage Case"></a>
+
+                                        </div>
+                                        <div class="hidden-xs col-sm-4">
+
+                                            <a href="#"><img
+                                                    src="{% static 'images/index_carousel/decorativeironwallmirror.jpg' %}"
+                                                    class="nail-img img-responsive img-fluid carousel-image"
+                                                    alt="Hosley Decorative Iron Wall Mirror"></a>
+
+                                        </div>
+                                        <div class="hidden-xs col-sm-4">
+
+                                            <a href="#"><img
+                                                    src="{% static 'images/index_carousel/tventertainmentunit.jpg' %}"
+                                                    class="nail-img img-responsive img-fluid carousel-image"
+                                                    alt="UniArt Wall Mounted TV Entertainment Unit"></a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Carousel controls -->
+                            <a class="carousel-control left" href="#nail1" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="carousel-control right" href="#nail1" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--thumbnail carousel 3-->
+            <div class="display">
+                <div class="row">
+                    <div class="col-md-8 col-sm-8 col-xs-8">
+                        <h3>Clothing</h3>
+                        <div id="nail2" class="carousel3 carousel slide" data-ride="carousel" data-interval="0">
+                            <!-- Carousel indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="nail2" data-slide-to="0" class="active"></li>
+                                <li data-target="#nail2" data-slide-to="1"></li>
+                                <li data-target="#nail2" data-slide-to="2"></li>
+                            </ol>
+                            <!--  carousel items -->
+                            <div class="carousel-inner">
+                                <div class="item carousel-item active">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+
+                                            <a href="#" class=""><img
+                                                    src="{% static 'images/index_carousel/zeellehenga.jpg' %}"
+                                                    class="nail-img img-responsive img-fluid carousel-image"
+                                                    alt="Zeel Lehenga Choli"></a>
+                                        </div>
+                                        <div class="hidden-xs col-sm-4">
+
+                                            <a href="#" class=""><img
+                                                    src="{% static 'images/index_carousel/babyjumpsuit.jpg' %}"
+                                                    alt="TASLAR Unisex Baby Flannel Jumpsuit"
+                                                    class="nail-img img-responsive img-fluid carousel-image"></a>
+                                        </div>
+                                        <div class="hidden-xs col-sm-4">
+                                            <a href="#" class=""><img
+                                                    src="{% static 'images/index_carousel/mensweatshirt.jpg' %}"
+                                                    alt="Lewel Men's Cotton Hooded Sweatshirt"
+                                                    class="nail-img img-responsive img-fluid carousel-image"></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item carousel-item">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+
+                                            <a href="#"><img src="{% static 'images/index_carousel/menshirt.jpg' %}"
+                                                    class="nail-img img-responsive img-fluid carousel-image"
+                                                    alt="Sretan Men's Regular Fit Casual Shirt"></a>
+
+                                        </div>
+                                        <div class="hidden-xs col-sm-4">
+
+                                            <a href="#"><img src="{% static 'images/index_carousel/babyromper.jpg' %}"
+                                                    class="nail-img img-responsive img-fluid carousel-image"
+                                                    alt="Popees Baby Care Short Sleeve T-Shirt with Romper"></a>
+
+                                        </div>
+                                        <div class="hidden-xs col-sm-4">
+
+                                            <a href="#"><img
+                                                    src="{% static 'images/index_carousel/bandhanisaree.jpg' %}"
+                                                    class="nail-img img-responsive img-fluid carousel-image"
+                                                    alt="Cloth Clock Bandhani Bandhej Khadi Silk Saree"></a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Carousel controls -->
+                            <a class="carousel-control left" href="#nail2" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="carousel-control right" href="#nail2" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            <!-- Marquee -->
+            <marquee direction="up" class="offers">
+                <ul>
+                    <li>Avail 20% off this Monsoon on all Redmi phones</li>
+                    <li>Buy 2, Get 2 Free only on Men Clothing. Visit now</li>
+                    <li>Get Infinity JBL Bluetooth speakers absolutely free with Samsung M21. Get yours now !!!</li>
+                    <li>FLAT 50% off on all Wakefit furniture. Offer valid till 12 midnight tonight only</li>
+                </ul>
+            </marquee>
+        </td>
+    </tr>
+</table>
+{% endblock %}

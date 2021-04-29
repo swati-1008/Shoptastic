@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Shoptastic</title>
+  <meta name="viewport" content="width=device-width , initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'Dashboard/css/styles.css' %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  {% block head_block %}
+  {% endblock %}
+</head>
+
+<body id="top" class="">
+
+  <header>
+    <nav class=" navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <!--brand, search-->
+        <div class="row">
+          <div class=" navbar-header">
+            <button type="button" data-toggle="collapse" data-target="#bar" class="navbar-toggle">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <a class=" navbar-brand" href="#">
+            <h1 id="head">Shoptastic</h1>
+          </a>
+
+          <div class="hidden-xs search pull-left input-group">
+            <!--All button-->
+
+            <div class="input-group-btn search-panel">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                <span id="search-content">All </span>
+                <span class="caret"></span>
+              </button>
+
+              <ul class=" dropdown-menu" role="menu">
+                <li><a href="#all">All Categories</a></li>
+                <li><a href="#x">Mobiles</a></li>
+                <li><a href="#y">Furnitures</a></li>
+                <li><a href="#z">Men's Wear</a></li>
+                <li><a href="#a">Women's Wear</a></li>
+                <li><a href="#a">Kids' Wear</a></li>
+              </ul>
+
+            </div>
+            <input type="hidden" value="all">
+            <input type="text" class="form-control" placeholder="Search">
+            <span class="input-group-btn">
+              <button type="button" class="sub btn btn-default"> <span class=" glyphicon glyphicon-search"></span>
+
+              </button>
+            </span>
+          </div>
+          <div class="visible-xs small">
+            <a href=#search><span data-toggle="tooltip" data-placement="bottom" title="Search" class="rt white glyphicon glyphicon-search"></span></a>
+            <a href=#address><span data-toggle="tooltip" data-placement="bottom" title="Address" class="rt white glyphicon glyphicon-map-marker"></span></a>
+            <a href=#cart><span data-toggle="tooltip" data-placement="bottom" title="Cart" class="rt white glyphicon glyphicon-shopping-cart"></span></a>
+          </div>
+        </div>
+
+        <div class="navbar-collapse collapse" id="bar">
+            <!-- Deliver to and Shop by Category -->
+            <ul class="nav navbar-nav navbar-left">
+
+                <!-- Deliver to -->
+                <li class="hidden-xs deli">
+                <div class="location">
+                    <a href="#address"> <span class=" white glyphicon glyphicon-map-marker"></span>
+                    <span class="grey">Deliver to</span>
+                    <div class="white bold">Srinagar-190006</div>
+                    </a>
+                </div>
+                </li>
+
+                <!-- Shop by Category -->
+                <li>
+                <div class="dropdown show">
+                    <button class="hidden-xs dropbtn dropdown-toggle" data-toggle="dropdown">
+                    <span class="grey">Shop by </span>
+                    <div>
+                        <span class="white bold">Category</span>
+                        <span class="grey caret"></span>
+                    </div>
+                    </button>
+
+                    <div class="dropdown-content">
+                    <a href="#">Mobiles</a>
+                    <a href="#">Furniture</a>
+                    <a href="#">Clothing</a>
+                    </div>
+                    <!--hamburger-->
+                    <div class="visible-xs container">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                        <h5 class="center  panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                            Shop by category</a>
+                        </h5>
+                        </div>
+                    </div>
+                    </div>
+                    <!--hamburger end-->
+                </div>
+                </li>
+            </ul>
+
+            <!-- Sign In, Try Prime, Your Lists, and Cart -->
+            <ul class="nav navbar-nav navbar-right">
+
+                <!-- Sign In -->
+                <li class="">
+                    <div class="dropdown show">
+                        <button class="hidden-xs dropbtn dropdown-toggle" data- toggle="dropdown">
+                        <span class="grey">Hello,</span>
+                        <div>
+                            <!-- {% block sign_in %}
+                            {% endblock %} -->
+                            {% if user.is_authenticated %}
+                              <span class="white bold" id="visible">
+                                {{ user.get_username }}
+                                <a id="hidden" href="{% url 'Register_Login:user_logout' %}">Logout</a>
+                              </span>
+                              <style>
+                                  #visible:hover #hidden {
+                                      display: block;
+                                      color: white;
+                                      position: absolute;
+                                  }
+                              </style>
+                            {% else %}
+                              <a href="{% url 'Register_Login:user_login' %}" class="hover-ele">
+                                  <span class="white bold" id="visible">
+                                      Sign In
+                                    <a id="hidden" href="{% url 'Register_Login:user_logout' %}">Logout</a>
+                                  </span>
+                              </a>
+                            {% endif %}
+                        </div>
+                        </button>
+                        <!--hamburger-->
+                        <div class="visible-xs container">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                            <h5 class="center  panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="{% url 'Register_Login:user_login' %}">
+                                Hello, 
+                                <!-- {% block sign_in1 %}
+                                {% endblock %} -->
+                                {% if user.is_authenticated %}
+                                  {{ user.get_username }}
+                                {% else %}
+                                    Sign In
+                                {% endif %}
+                              </a>
+                            </h5>
+                            </div>
+
+                            <div id="collapse2" class="panel-collapse collapse ">
+                            </div>
+                        </div>
+                        </div>
+                        <!--hamburger end-->
+                    </div>
+                </li>
+
+                <!-- Your Orders -->
+                <li class="">
+                    <div class="dropdown show ">
+                        <button class="hidden-xs dropbtn dropdown-toggle" data-toggle="dropdown">
+                        <span class="grey">Your</span>
+                        <div>
+                            <span class="white bold">Orders</span>
+                        </div>
+                        </button>
+                        <!--hamburger-->
+                        <div class="visible-xs container">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h5 class="center  panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                                    Your Orders</a>
+                                </h5>
+                            </div>
+
+                            <div id="collapse3" class="panel-collapse collapse ">
+                            </div>
+                        </div>
+                        </div>
+                        <!--hamburger end-->
+                    </div>
+                </li>
+
+                <!-- Your Lists -->
+                <li class="">
+                    <div class="dropdown show ">
+                        <button class="hidden-xs dropbtn dropdown-toggle" data-toggle="dropdown">
+                        <span class="grey">Your</span>
+                        <div>
+                            <span class="white bold">Lists</span>
+                        </div>
+                        </button>
+                        <!--hamburger-->
+                        <div class="visible-xs container">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                            <h5 class="center  panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+                                Your Lists</a>
+                            </h5>
+                            </div>
+                        </div>
+                        </div>
+                        <!--hamburger end-->
+                    </div>
+                </li>
+
+                <!-- Cart -->
+                <li class="hidden-xs">
+                    <a href="#cart">
+                        <div>
+                        <span class="bold white glyphicon glyphicon-shopping-cart"></span>
+                        <span class="white bold">Cart</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  {% block body_block %}
+  {% endblock %}
+  <script src="{% static 'Dashboard/js/app.js' %}" charset="utf-8"></script>
+
+</body>
+
+<footer>
+  <div class="bot container-fluid">
+    <a href=#top>
+      <h4 class="less white">Back to top</h4>
+    </a>
+  </div>
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+          <h4 class="white">Get to Know Us</h4>
+          <div class="gap">
+            <a class="grey foot" href="#">About Us</a>
+          </div>
+          <div class="gap">
+            <a class="grey foot" href="#">Careers</a>
+          </div>
+          <div class="gap">
+            <a class="grey foot" href="#">Press Release</a>
+          </div>
+          <div class="gap">
+            <a class="grey foot" href="#">Shoptastic cares</a>
+          </div>
+          <div class="gap">
+            <a class="grey foot" href="#">Gift a Smile</a>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <h4 class="white">Connect with Us</h4>
+          <div class="gap">
+            <a class="grey foot" href="#">Facebook</a>
+          </div>
+          <div class="gap">
+            <a class="grey foot" href="#">Twitter</a>
+          </div>
+          <div class="gap">
+            <a class="grey foot" href="#">Instagram</a>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <h4 class="white">Make Money with Us</h4>
+          <div class="gap">
+            <a class="grey foot" href="#">Sell on Shoptastic</a>
+          </div>
+          <div class="gap">
+            <a class="grey foot" href="#">Become an Affiliate</a>
+          </div>
+          <div class="gap">
+            <a class="grey foot" href="#">Fulfilment by Shoptastic</a>
+          </div>
+          <div class="gap">
+            <a class="grey foot" href="#">Advertise Your Products</a>
+          </div>
+          <div class="gap">
+            <a class="grey foot" href="#">Shoptastic Pay on Merchants</a>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <h4 class="white">Let Us Help You</h4>
+          <div class="gap">
+            <a class="grey foot" href="#">Your Account</a>
+          </div>
+          <div class="gap">
+            <a class="grey foot" href="#">Returns Centre</a>
+          </div>
+          <div class="gap">
+            <a class="grey foot" href="#">100% Purchase Protection</a>
+          </div>
+          <div class="gap">
+            <a class="grey foot" href="#">Shoptastic App Download</a>
+          </div>
+          <div class="gap">
+            <a class="grey foot" href="#">Shoptastic Assisstant</a>
+          </div>
+          <div class="gap">
+            <a class="grey foot" href="#">Help</a>
+          </div>
+        </div>
+      </div>
+      <hr style="border-color: #37475A">
+      <div class="container-fluid">
+
+        <h3 class="white" style="text-align: center;">Shoptastic</h3>
+        <div class="row" style="padding-bottom: 10px;">
+          <div class="pop end col-sm-1">
+            <a href="#" class=" foot grey">India</a>
+          </div>
+          <div class="pop end col-sm-1">
+            <a href="#" class=" foot grey">Australia</a>
+          </div>
+          <div class="pop end col-sm-1">
+            <a href="#" class=" foot grey">Greenland</a>
+          </div>
+          <div class="pop end col-sm-1">
+            <a href="#" class=" foot grey">Brazil</a>
+          </div>
+          <div class="pop end col-sm-1">
+            <a href="#" class="foot grey">Alaska</a>
+          </div>
+          <div class="pop end col-sm-1">
+            <a href="#" class=" foot grey">Singapore</a>
+          </div>
+          <div class="pop end col-sm-1">
+            <a href="#" class=" foot grey">Canada</a>
+          </div>
+          <div class="pop end col-sm-1">
+            <a href="#" class=" foot grey">France</a>
+          </div>
+          <div class="pop end col-sm-1">
+            <a href="#" class=" foot grey">Portugal</a>
+          </div>
+          <div class="pop end col-sm-1">
+            <a href="#" class=" foot grey">Greece</a>
+          </div>
+          <div class="pop end col-sm-1">
+            <a href="#" class=" foot grey">Japan</a>
+          </div>
+          <div class="pop end col-sm-1">
+            <a href="#" class=" foot grey">Maldives</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</html>

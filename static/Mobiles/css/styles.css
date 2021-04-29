@@ -1,0 +1,146 @@
+#head {
+    margin-top: 0;
+    padding-left: 0.5em;
+    color: white;
+    font-size: 2em;
+    line-height: 0.5em;
+}
+
+.left {
+    padding-left: 50px;
+}
+
+.display {
+    height: 900px;
+    width: 700px;
+}
+
+hr {
+    border-top: 1px solid #A9A9A9;
+    width: 1400px;
+}
+
+.submit {
+    margin-left: 20px;
+    margin-top: -100px;
+}
+
+.information {
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.technical {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 700px;
+}
+
+.col1 {
+    background-color: #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.col2 {
+    background-color: white;
+    text-align: left;
+    padding: 8px;
+}
+
+.container-fluid {
+    background-color: #6155A6;
+    color: #FFE6E6;
+}
+
+button.sub {
+    background-color: #febd69;
+}
+
+button.sub:hover {
+    background-color: #fead3f;
+}
+
+.search {
+    margin-top: 1em;
+    padding-left: 1em;
+    width: 70%;
+}
+
+.white {
+    color: white;
+}
+
+.grey {
+    color: #ccc;
+}
+
+.description {
+    margin-top: -120px;
+    margin-left: 100px;
+    width: 700px;
+    height: 200px;
+}
+
+.features {
+    list-style: none;
+}
+
+.features li:before {
+    content: "•";
+    font-size: 130%;
+    padding-right: 5px;
+}
+
+.stickers {
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    float: left;
+    margin: 0 20px 0 0;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.dropbtn {
+    background-color: #6155A6;
+    color: white;
+    padding: 5px;
+    font-size: 1em;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 100px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a:hover {
+    color: darkorange;
+    text-decoration: none;
+}
+
+ul>li {
+    padding-top: 0.5em;
+    padding-left: 0.5em;
+}

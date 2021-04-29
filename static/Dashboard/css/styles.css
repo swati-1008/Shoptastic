@@ -1,0 +1,269 @@
+/*navbar*/
+.margin {
+    margin-bottom: 3em;
+}
+  
+body {
+  overflow-x: hidden;
+}
+
+#hidden {
+  display: none;
+}
+
+#visible:hover #hidden {
+  display: block;
+}
+  
+#head {
+  margin-top: 0;
+  padding-left: 0.5em;
+  color: white;
+  font-size: 2em;
+  line-height: 0.5em;
+}
+
+.container-fluid {
+  background-color: #6155A6;
+  color: #FFE6E6;
+}
+
+button.sub {
+  background-color: #febd69;
+}
+
+button.sub:hover {
+  background-color: #fead3f;
+}
+
+.top-carousel {
+  width: 350px;
+  height: 100px;
+  margin-left: 500px;
+}
+
+.display {
+  margin-left: 120px;
+  width: 1700px;
+}
+
+.offers {
+  margin-left: -450px;
+  width: 400px;
+  height: 800px;
+  font-size: 2em;
+  color: blue;
+}
+
+.search {
+  margin-top: 1em;
+  padding-left: 1em;
+  width: 70%;
+}
+
+.white {
+  color: white;
+}
+
+.grey {
+  color: #ccc;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.dropbtn {
+  background-color: #6155A6;
+  color: white;
+  padding: 5px;
+  font-size: 1em;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 100px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a:hover {
+  color: darkorange;
+  text-decoration: none;
+}
+
+.text:hover {
+  text-decoration: underline;
+}
+
+ul>li {
+  padding-top: 0.5em;
+  padding-left: 0.5em;
+}
+
+.navbar-center {
+  position: absolute;
+  left: 50%;
+  transform: translatex(-70%);
+}
+
+@media (max-width: 768px) {
+  .dropdown:hover .dropdown-content {
+    display: none;
+  }
+
+  #head {
+    position: fixed;
+    top: 0.5em;
+  }
+}
+
+.rt {
+  padding-right: 1.5em;
+  font-size: 1.8em;
+}
+
+.small {
+  position: absolute;
+  right: 6em;
+  top: 1em;
+}
+
+.rtt {
+  padding-right: 0.5em;
+}
+
+.center {
+  text-align: center;
+  color: black;
+}
+
+/*carousel*/
+.carousel1 {
+  margin-top: 7.5em;
+  max-height: 300px;
+}
+
+.carousel1 .pic {
+  height: 300px;
+}
+
+.carousel-image {
+  width: 220px;
+  height: 250px;
+  border-radius: 25px;
+}
+
+.first {
+  background-color: #EF4F4F;
+  color: #FFCDA3;
+}
+
+.second {
+  background-color: #AEE1E1;
+  color: #A5252A;
+}
+
+.third {
+  background-color: #C6EBC9;
+  color: #70AF85;
+}
+
+.furniture {
+  padding-left: 70px;
+  font-size: 1em;
+}
+
+.pic img {
+  min-height: 300px;
+}
+
+ol>li {
+  visibility: hidden;
+}
+
+@media (max-width:767px) {
+  .carousel1 {
+    margin-top: 7em;
+    max-height: 300px;
+  }
+}
+
+@media(min-width:637px) and (max-width:767px) {
+  .nail-img {
+    width: 100%;
+    height: 300px;
+  }
+}
+
+.side {
+  padding-top: 1em;
+}
+
+.clock {
+  padding-top: 2em;
+}
+
+/*footer*/
+
+footer {
+  padding-bottom: 2em;
+  background-color: #1E2E3A;
+}
+
+.bot {
+  background-color: #37475A;
+  margin-top: 2em;
+  text-align: center;
+  height: 45px;
+}
+
+.bot:hover {
+  background-color: #485769;
+}
+
+.bot a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.less {
+  font-size: 1em;
+}
+
+.foot {
+  font-size: 0.95em;
+}
+
+.foot:hover {
+  color: #ccc;
+}
+
+.gap {
+  margin-bottom: 8px;
+}
+
+.end {
+  text-align: center;
+}
+
+.pop {
+  font-size: 0.8em;
+}

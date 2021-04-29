@@ -1,0 +1,52 @@
+{% extends 'Register_Login/base.html' %}
+{% load static %}
+
+{% block heading %}
+    <h3>Sign Up</h3>
+{% endblock %}
+
+{% block form %}
+    <form autocomplete="off" style="height: 300px;">
+        {% csrf_token %}
+        <!-- {{ user_form.as_p }} -->
+        <div class="input-group form-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-user"></i></span>
+            </div>
+            <input type="text" class="form-control" placeholder="First name">
+        </div>
+        <div class="input-group form-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-user"></i></span>
+            </div>
+            <input type="text" class="form-control" placeholder="Last Name">
+        </div>
+        <div class="input-group form-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+            </div>
+            <input type="email" class="form-control" placeholder="E-Mail">
+        </div>
+        <div class="input-group form-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-user"></i></span>
+            </div>
+            <input type="text" class="form-control" placeholder="Username">
+        </div>
+        <div class="input-group form-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-key"></i></span>
+            </div>
+            <input type="password" class="form-control" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <input type="button" value="Register" class="btn float-right login_btn" id="register">
+        </div>
+    </form>
+{% endblock %}
+
+{% block register_login %}
+    <div class="d-flex justify-content-center links">
+        Already have an account?<a href="{% url 'Register_Login:user_login' %}">Sign In</a>
+    </div>
+{% endblock %}

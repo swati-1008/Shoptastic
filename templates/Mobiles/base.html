@@ -1,0 +1,109 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+{% block head_block %}
+    <link rel="stylesheet" href="{% static 'Mobiles/css/styles.css' %}">
+    <script src="https://kit.fontawesome.com/f6b9125e15.js" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block body_block %}
+    <table>
+        <tr>
+        <td>
+            {% block display_image %}
+            {% endblock %}
+        </td>
+        <td>
+            <div class="description">
+            <h2>
+                {{ product_name }} ({{ product_specs }})
+            </h2>
+            <br>
+            <h3>
+                Price: <i class="fas fa-rupee-sign"></i> {{ price }}
+            </h3>
+            <h5 style="padding-left: 75px;">
+                Inclusive of all taxes
+            </h5>
+            <br>
+            <h4 id="free-delivery"></h4>
+            <h4 id="fastest-delivery"></h4>
+            <br>
+            <br>
+            <span>
+                <div class="stickers">
+                <img src="https://images-na.ssl-images-amazon.com/images/G/31/A2I-Convert/mobile/IconFarm/icon-returns._CB484059092_.png" style="width: 50px;
+                height: 50px; align: center;" alt="7 days replacement">
+                <br>
+                <a href="#" title="Header" data-toggle="popover" data-placement="bottom" data-content="Content">7 days Replacement</a>
+                </div>
+                <div class="stickers">
+                <img src="https://images-na.ssl-images-amazon.com/images/G/31/A2I-Convert/mobile/IconFarm/icon-amazon-delivered._CB485933725_.png" style="width: 50px;
+                height: 50px; align: center;" alt="Home Delivered">
+                <br>
+                <a href="#" title="Header" data-toggle="popover" data-placement="bottom" data-content="Content">Home Delivered</a>
+                </div>
+                <div class="stickers">
+                <img src="https://images-na.ssl-images-amazon.com/images/G/31/A2I-Convert/mobile/IconFarm/icon-warranty._CB485935626_.png" style="width: 50px;
+                height: 50px; align: center;" alt="1 year warranty">
+                <br>
+                <a href="#" title="Header" data-toggle="popover" data-placement="bottom" data-content="Content">1 Year Warranty</a>
+                </div>
+                <div class="stickers">
+                <img src="https://images-na.ssl-images-amazon.com/images/G/31/A2I-Convert/mobile/IconFarm/No_contact_delivery_final._CB432269791_.png" style="width: 50px;
+                height: 50px; align: center;" alt="No Contact Delivery">
+                <br>
+                <a href="#" title="Header" data-toggle="popover" data-placement="bottom" data-content="Content">No Contact Delivery</a>
+                </div>
+            </span>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <hr style="width: 700px;">
+            <h4 style="color: green;">In stock.</h4>
+            <h4>Colour: <strong>{{ color }}</strong></h4>
+            <ul class="features">
+                {% block features %}
+                {% endblock %}
+            </ul>
+            </div>
+        </td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr>
+    <h2 class="left">Have a Question?</h2>
+    <p class="left">Find answers in product info, Q&As, and reviews</p>
+    <form action="mailto:swati100897@gmail.com" method="post" enctype="text/plain" class="left">
+        <div>
+        <i class="fas fa-search"></i>
+        <input type="search" placeholder="Type your question or keyword.." size="80">
+        <input type="submit" value="Submit">
+        </div>
+    </form>
+    <hr>
+    <h1 class="left">Products related to this item</h1>
+    <hr>
+    <h2 class="left" style="line-height: 1.5;">{{ product_name }} Mobile Information</h2>
+    <p class="left" style="line-height: 1.5;">Style Name: <strong>{{ product_specs }}</strong> | Colour: <strong>{{ color }}</strong></p>
+    <div class="information">
+        {% block table %}
+        {% endblock %}
+    </div>
+    <br>
+    <br>
+    <h2 class="left">Customer Reviews and Comments to be added here</h2>
+    <script src="{% static 'Mobiles/js/mobile.js' %}" charset="utf-8"></script>
+{% endblock %}
