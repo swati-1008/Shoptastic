@@ -15,7 +15,6 @@
         </td>
         <td>
             <div class="description">
-                <h1>{{ product_name }}</h1>
             <h2>
                 {{ product_name }}
             </h2>
@@ -75,12 +74,6 @@
     <br>
     <br>
     <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
     <hr>
     <h2 class="left">Have a Question?</h2>
     <p class="left">Find answers in product info, Q&As, and reviews</p>
@@ -94,8 +87,7 @@
     <hr>
     <h1 class="left">Products related to this item</h1>
     <hr>
-    <h2 class="left" style="line-height: 1.5;">{{ product_name }} Furniture Information</h2>
-    <p class="left" style="line-height: 1.5;">Style Name: <strong>{{ product_specs }}</strong> | Colour: <strong>{{ color }}</strong></p>
+    <h2 class="left" style="line-height: 1.5;">Furniture Information</h2>
     <div class="information">
         {% block table %}
         {% endblock %}
@@ -103,5 +95,5 @@
     <br>
     <br>
     <h2 class="left">Customer Reviews and Comments to be added here</h2>
-    <script src="{% static 'Mobiles/js/mobile.js' %}" charset="utf-8"></script>
+    <script src="{% static 'Furniture/js/furniture.js' %}" charset="utf-8"></script>
 {% endblock %}

@@ -1,0 +1,92 @@
+{% extends 'Clothing/base.html' %}
+{% load static %}
+
+{% block display_image %}
+<div id="nail0" class="carousel slide display" data-ride="carousel" data-interval="0">
+    <!-- Carousel indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="nail0" data-slide-to="0" class="active"></li>
+        <li data-target="#nail0" data-slide-to="1"></li>
+        <li data-target="#nail0" data-slide-to="2"></li>
+        <li data-target="#nail0" data-slide-to="3"></li>
+        <li data-target="#nail0" data-slide-to="4"></li>
+    </ol>
+     <!-- carousel items -->
+     <div class="carousel-inner">
+        <div class="item active">
+            <img src="{% static 'images/clothing/zeellehenga/zeellehenga1.jpeg' %}" alt="Zeel Clothing Lehenga Choli" class="clothing">
+        </div>
+        <div class="item">
+            <img src="{% static 'images/clothing/zeellehenga/zeellehenga2.jpeg' %}" alt="Zeel Clothing Lehenga Choli" class="clothing">
+        </div>
+        <div class="item">
+            <img src="{% static 'images/clothing/zeellehenga/zeellehenga3.jpeg' %}" alt="Zeel Clothing Lehenga Choli" class="clothing">
+        </div>
+        <div class="item">
+            <img src="{% static 'images/clothing/zeellehenga/zeellehenga4.jpeg' %}" alt="Zeel Clothing Lehenga Choli" class="clothing">
+        </div>
+        <div class="item">
+            <img src="{% static 'images/clothing/zeellehenga/zeellehenga5.jpeg' %}" alt="Zeel Clothing Lehenga Choli" class="clothing" style="margin-top: 150px;">
+        </div>
+    </div>
+    <!-- Carousel controls -->
+    <a class="carousel-control left control" href="#nail0" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="carousel-control right control" href="#nail0" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>
+{% endblock %}
+
+{% block features %}
+    <ul>
+        <li>Care Instructions: Dry Clean Only</li>
+        <li>Fit Type: Regular</li>
+        <li>Lehenga Fabric: Khadi Organza; Blouse Fabric: Mulbury Silk; Dupatta Fabric: Khadi Organza; Inner: Satin with Cancan(tulle) layered net</li>
+        <li>Lehenga Work: Floral Digital Print with Border Dori & Sequins Embroidery; Blouse Work: Dori, Zari & Glitter Sequins Embroidery; Dupatta Work: Floral Digital Print, Dori & Sequins Embroidery</li>
+        <li>Measurements: Lehenga(Semi-Stitched) Flair : 4.00mtr, waist-43", height-43"; Blouse(Unstitched) Size: up to 44"; Dupatta Length: 2.25 mtr</li>
+        <li>Package Contains: 1 Semi-Stitched Lehenga with Dupatta and Unstitched Blouse</li>
+    </ul>
+{% endblock %}
+
+{% block table %}
+    <table class="technical">
+        <tr>
+            <td class="col1">Product Dimensions</td>
+            <td class="col2">25 x 15 x 5 cm; 250 Grams</td>
+        </tr>
+        <tr>
+            <td class="col1">Date First Available</td>
+            <td class="col2">8 December 2019</td>
+        </tr>
+        <tr>
+            <td class="col1">Manufacturer</td>
+            <td class="col2">Zeel Clothing</td>
+        </tr>
+        <tr>
+            <td class="col1">ASIN</td>
+            <td class="col2">B082HJV9Q5</td>
+        </tr>
+        <tr>
+            <td class="col1">Country of Origin</td>
+            <td class="col2">India</td>
+        </tr>
+        <tr>
+            <td class="col1">Department</td>
+            <td class="col2">Women</td>
+        </tr>
+        <tr>
+            <td class="col1">Item Weight</td>
+            <td class="col2">250 g</td>
+        </tr>
+        <tr>
+            <td class="col1">Generic Name</td>
+            <td class="col2">Floral Printed Embroidered heavy Wedding Designer Lehenga Choli set</td>
+        </tr>
+        <tr>
+            <td class="col1">Customer Ratings</td>
+            <td class="col2">4.2 out of 5 stars</td>
+        </tr>
+    </table>
+{% endblock %}

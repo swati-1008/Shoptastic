@@ -1,0 +1,93 @@
+{% extends 'Clothing/base.html' %}
+{% load static %}
+
+{% block display_image %}
+<div id="nail0" class="carousel slide display" data-ride="carousel" data-interval="0">
+    <!-- Carousel indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="nail0" data-slide-to="0" class="active"></li>
+        <li data-target="#nail0" data-slide-to="1"></li>
+        <li data-target="#nail0" data-slide-to="2"></li>
+        <li data-target="#nail0" data-slide-to="3"></li>
+        <li data-target="#nail0" data-slide-to="4"></li>
+    </ol>
+     <!-- carousel items -->
+     <div class="carousel-inner">
+        <div class="item active">
+            <img src="{% static 'images/clothing/taslarbabyjumpsuit/babyjumpsuit1.jpeg' %}" alt="TASLAR Unisex Baby Flannel Jumpsuit" class="clothing">
+        </div>
+        <div class="item">
+            <img src="{% static 'images/clothing/taslarbabyjumpsuit/babyjumpsuit2.jpeg' %}" alt="TASLAR Unisex Baby Flannel Jumpsuit" class="clothing">
+        </div>
+        <div class="item">
+            <img src="{% static 'images/clothing/taslarbabyjumpsuit/babyjumpsuit3.jpeg' %}" alt="TASLAR Unisex Baby Flannel Jumpsuit" class="clothing">
+        </div>
+        <div class="item">
+            <img src="{% static 'images/clothing/taslarbabyjumpsuit/babyjumpsuit4.jpeg' %}" alt="TASLAR Unisex Baby Flannel Jumpsuit" class="clothing">
+        </div>
+        <div class="item">
+            <img src="{% static 'images/clothing/taslarbabyjumpsuit/babyjumpsuit5.jpeg' %}" alt="TASLAR Unisex Baby Flannel Jumpsuit" class="clothing" style="margin-top: 150px;">
+        </div>
+    </div>
+    <!-- Carousel controls -->
+    <a class="carousel-control left control" href="#nail0" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="carousel-control right control" href="#nail0" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>
+{% endblock %}
+
+{% block features %}
+    <ul>
+        <li>SIZE: 90cm, Fits for AGE: 12-18 months</li>
+        <li>MATERIAL:Soft Flannel</li>
+        <li>Good Ideal For Spring & Autumn & Winter usage</li>
+        <li>RECOMMEND:Cuddly Animal Design,Not Only Fit For Daily Dress, But Also Is a Great Gift For Festivals Such as Birthdays, Christmas, Cosplay Party.</li>
+        <li>INSTRUCTIONS: Hand Washing & Machine Washing, Zipper For Easy Diaper Change, The Mission Is To Help Baby Play and Sleep Comfortably.Better To Wash First Before Wear, As Baby Skin Is Quiet Sensitive.</li>
+        <li>PS: Socks Not Included</li>
+    </ul>
+{% endblock %}
+
+{% block table %}
+    <table class="technical">
+        <tr>
+            <td class="col1">Product Dimensions</td>
+            <td class="col2">29.5 x 28 x 11.6 cm; 350 Grams</td>
+        </tr>
+        <tr>
+            <td class="col1">Date First Available</td>
+            <td class="col2">24 March 2019</td>
+        </tr>
+        <tr>
+            <td class="col1">Manufacturer</td>
+            <td class="col2">Taslar</td>
+        </tr>
+        <tr>
+            <td class="col1">ASIN</td>
+            <td class="col2">B07PQS98D6</td>
+        </tr>
+        <tr>
+            <td class="col1">Country of Origin</td>
+            <td class="col2">China</td>
+        </tr>
+        <tr>
+            <td class="col1">Department</td>
+            <td class="col2">Unisex</td>
+        </tr>
+        <tr>
+            <td class="col1">Item Weight</td>
+            <td class="col2">350 g</td>
+        </tr>
+        <tr>
+            <td class="col1">Amazon Bestseller Rank</td>
+            <td class="col2">#23,262 in Clothing & Accessories (See Top 100 in Clothing & Accessories)
+                #691 in Baby Boys' Clothing</td>
+        </tr>
+        <tr>
+            <td class="col1">Customer Ratings</td>
+            <td class="col2">4.3 out of 5 stars</td>
+        </tr>
+    </table>
+{% endblock %}

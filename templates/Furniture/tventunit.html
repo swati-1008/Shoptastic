@@ -1,0 +1,141 @@
+{% extends 'Furniture/base.html' %}
+{% load static %}
+
+{% block display_image %}
+<div id="nail0" class="carousel slide display" data-ride="carousel" data-interval="0">
+    <!-- Carousel indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="nail0" data-slide-to="0" class="active"></li>
+        <li data-target="#nail0" data-slide-to="1"></li>
+        <li data-target="#nail0" data-slide-to="2"></li>
+        <li data-target="#nail0" data-slide-to="3"></li>
+        <li data-target="#nail0" data-slide-to="4"></li>
+    </ol>
+     <!-- carousel items -->
+     <div class="carousel-inner">
+        <div class="item active">
+            <img src="{% static 'images/furniture/tventunit/entunit1.jpeg' %}" alt="UniArt Wall Mounted TV Entertainment Unit" class="furniture">
+        </div>
+        <div class="item">
+            <img src="{% static 'images/furniture/tventunit/entunit2.jpeg' %}" alt="UniArt Wall Mounted TV Entertainment Unit" class="furniture">
+        </div>
+        <div class="item">
+            <img src="{% static 'images/furniture/tventunit/entunit3.jpeg' %}" alt="UniArt Wall Mounted TV Entertainment Unit" class="furniture">
+        </div>
+        <div class="item">
+            <img src="{% static 'images/furniture/tventunit/entunit4.jpeg' %}" alt="UniArt Wall Mounted TV Entertainment Unit" class="furniture">
+        </div>
+        <div class="item">
+            <img src="{% static 'images/furniture/tventunit/entunit5.png' %}" alt="UniArt Wall Mounted TV Entertainment Unit" class="furniture">
+        </div>
+    </div>
+    <!-- Carousel controls -->
+    <a class="carousel-control left control" href="#nail0" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="carousel-control right control" href="#nail0" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>
+{% endblock %}
+
+{% block features %}
+    <table cellpadding="10px" cellspacing="10px" class="features">
+        <tr>
+            <td class="features"><strong>Material</strong></td>
+            <td class="features">Engineered Wood</td>
+        </tr>
+        <tr>
+            <td class="features"><strong>Item Dimensions (L x W x H)</strong></td>
+            <td class="features">20 x 70 x 10 Centimeters</td>
+        </tr>
+        <tr>
+            <td class="features"><strong>Number of Drawers</strong></td>
+            <td class="features">1</td>
+        </tr>
+        <tr>
+            <td class="features"><strong>Number of Drawers</strong></td>
+            <td class="features">1</td>
+        </tr>
+        <tr>
+            <td class="features"><strong>Number of Shelves</strong></td>
+            <td class="features">1</td>
+        </tr>
+    </table>
+{% endblock %}
+
+{% block table %}
+    <table>
+        <tr>
+            <td>
+                <h3 style="padding-left: 20px; margin-top: -40px;">Technical Details</h3>
+                <hr style="width: 700px; margin-left: -5px;">
+                <table class="technical">
+                    <tr>
+                    <td class="col1">Color</td>
+                    <td class="col2">White</td>
+                    </tr>
+                    <tr>
+                    <td class="col1">Product Dimensions	</td>
+                    <td class="col2">20 x 70 x 10 Centimeters</td>
+                    </tr>
+                    <tr>
+                    <td class="col1">Number of Drawers</td>
+                    <td class="col2">1</td>
+                    </tr>
+                    <tr>
+                    <td class="col1">Number of Doors</td>
+                    <td class="col2">1</td>
+                    </tr>
+                    <tr>
+                    <td class="col1">Number of Shelves</td>
+                    <td class="col2">1</td>
+                    </tr>
+                    <tr>
+                    <td class="col1">Brand</td>
+                    <td class="col2">UniShop</td>
+                    </tr>
+                    <tr>
+                    <td class="col1">Manufacturer</td>
+                    <td class="col2">UniArt</td>
+                    </tr>
+                    <tr>
+                    <td class="col1">Included Components</td>
+                    <td class="col2">1 unit of TV Entertainment Unit</td>
+                    </tr>
+                    <tr>
+                    <td class="col1">Country of Origin</td>
+                    <td class="col2">India</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <h3 style="margin-left: 100px; padding-left: 20px; margin-top: -10px">Additional Information</h3>
+                <hr style="margin-left: 100px; width: 700px;">
+                <table class="technical" style="margin-left: 100px;">
+                    <tr>
+                    <td class="col1">ASIN</td>
+                    <td class="col2">B08PPS8BL6</td>
+                    </tr>
+                    <tr>
+                    <td class="col1">Customer Reviews</td>
+                    <td class="col2">0 out of 5 stars</td>
+                    </tr>
+                    <tr>
+                    <td class="col1">Date First Available</td>
+                    <td class="col2">4 December 2020</td>
+                    </tr>
+                </table>
+                <br>
+                <br>
+                <h3 style="margin-left: 100px;">Feedback</h3>
+                <hr style="width: 700px; margin-left: 100px;">
+                <form style="margin-left: 100px;" action="mailto:swati100897@gmail.com" method="post" enctype="text/plain">
+                    <textarea placeholder="Any feedbacks or suggestions.." rows="4" cols="80" style="padding: 5px;"></textarea>
+                    <br />
+                    <input type="submit" />
+                </form>
+            </td>
+        </tr>
+    </table>
+{% endblock %}

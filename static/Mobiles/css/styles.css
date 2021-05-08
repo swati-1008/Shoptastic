@@ -82,6 +82,13 @@ button.sub:hover {
     height: 200px;
 }
 
+.mobile {
+    width: 480px;
+    height: 600px;
+    margin-top: 250px;
+    margin-left: 100px;
+}
+
 .features {
     list-style: none;
 }

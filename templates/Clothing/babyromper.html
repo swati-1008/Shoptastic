@@ -1,0 +1,89 @@
+{% extends 'Clothing/base.html' %}
+{% load static %}
+
+{% block display_image %}
+<div id="nail0" class="carousel slide display" data-ride="carousel" data-interval="0">
+    <!-- Carousel indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="nail0" data-slide-to="0" class="active"></li>
+        <li data-target="#nail0" data-slide-to="1"></li>
+        <li data-target="#nail0" data-slide-to="2"></li>
+        <li data-target="#nail0" data-slide-to="3"></li>
+        <li data-target="#nail0" data-slide-to="4"></li>
+    </ol>
+     <!-- carousel items -->
+     <div class="carousel-inner">
+        <div class="item active">
+            <img src="{% static 'images/clothing/babyromper/babyromper1.jpeg' %}" alt="Popees T-Shirt with Romper" class="clothing">
+        </div>
+        <div class="item">
+            <img src="{% static 'images/clothing/babyromper/babyromper2.jpeg' %}" alt="Popees T-Shirt with Romper" class="clothing">
+        </div>
+        <div class="item">
+            <img src="{% static 'images/clothing/babyromper/babyromper3.jpeg' %}" alt="Popees T-Shirt with Romper" class="clothing">
+        </div>
+        <div class="item">
+            <img src="{% static 'images/clothing/babyromper/babyromper4.jpeg' %}" alt="Popees T-Shirt with Romper" class="clothing">
+        </div>
+        <div class="item">
+            <img src="{% static 'images/clothing/babyromper/babyromper5.jpeg' %}" alt="Popees T-Shirt with Romper" class="clothing">
+        </div>
+    </div>
+    <!-- Carousel controls -->
+    <a class="carousel-control left control" href="#nail0" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="carousel-control right control" href="#nail0" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>
+{% endblock %}
+
+{% block features %}
+    <ul>
+        <li>Care Instructions: Hand Wash Only</li>
+        <li>Super breathable and soft fabrics skin-friendly giving baby 100% skin care</li>
+        <li>Wash Care: Hand Wash Only</li>
+        <li>Natural colouring - Popees uses only environment-friendly natural dyes to colour its fabrics and garments for superior quality “sensory" experience and are not harmful on baby’s skin like synthetic dyes</li>
+        <li>Pattern name: Solid</li>
+        <li>Size: 0 months and up</li>
+    </ul>
+{% endblock %}
+
+{% block table %}
+    <table class="technical">
+        <tr>
+            <td class="col1">Date First Available</td>
+            <td class="col2">7 December 2020</td>
+        </tr>
+        <tr>
+            <td class="col1">Manufacturer</td>
+            <td class="col2">Popees Baby Care Products Pvt Ltd</td>
+        </tr>
+        <tr>
+            <td class="col1">ASIN</td>
+            <td class="col2">B08PVNZ4NQ</td>
+        </tr>
+        <tr>
+            <td class="col1">Country of Origin</td>
+            <td class="col2">India</td>
+        </tr>
+        <tr>
+            <td class="col1">Department</td>
+            <td class="col2">Unisex</td>
+        </tr>
+        <tr>
+            <td class="col1">Item Weight</td>
+            <td class="col2">220 g</td>
+        </tr>
+        <tr>
+            <td class="col1">Amazon Bestseller Rank</td>
+            <td class="col2">#53,375 in Clothing & Accessories (See Top 100 in Clothing & Accessories)
+                #389 in Baby Boys' Clothing Sets</td>
+        </tr>
+        <tr>
+            <td class="col1">Customer Ratings</td>
+            <td class="col2">4.3 out of 5 stars</td>
+        </tr>
+    </table>
+{% endblock %}

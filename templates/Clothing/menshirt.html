@@ -1,0 +1,94 @@
+{% extends 'Clothing/base.html' %}
+{% load static %}
+
+{% block display_image %}
+<div id="nail0" class="carousel slide display" data-ride="carousel" data-interval="0">
+    <!-- Carousel indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="nail0" data-slide-to="0" class="active"></li>
+        <li data-target="#nail0" data-slide-to="1"></li>
+        <li data-target="#nail0" data-slide-to="2"></li>
+        <li data-target="#nail0" data-slide-to="3"></li>
+        <li data-target="#nail0" data-slide-to="4"></li>
+    </ol>
+     <!-- carousel items -->
+     <div class="carousel-inner">
+        <div class="item active">
+            <img src="{% static 'images/clothing/menshirt/shirt1.jpeg' %}" alt="Regular Fir Casual Shirt" class="clothing">
+        </div>
+        <div class="item">
+            <img src="{% static 'images/clothing/menshirt/shirt2.jpeg' %}" alt="Regular Fir Casual Shirt" class="clothing">
+        </div>
+        <div class="item">
+            <img src="{% static 'images/clothing/menshirt/shirt3.jpeg' %}" alt="Regular Fir Casual Shirt" class="clothing">
+        </div>
+        <div class="item">
+            <img src="{% static 'images/clothing/menshirt/shirt4.jpeg' %}" alt="Regular Fir Casual Shirt" class="clothing">
+        </div>
+        <div class="item">
+            <img src="{% static 'images/clothing/menshirt/shirt5.jpeg' %}" alt="Regular Fir Casual Shirt" class="clothing">
+        </div>
+    </div>
+    <!-- Carousel controls -->
+    <a class="carousel-control left control" href="#nail0" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="carousel-control right control" href="#nail0" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>
+{% endblock %}
+
+{% block features %}
+    <ul>
+        <li>Care Instructions: Hand Wash Only</li>
+        <li>Fit Type: Regular Fit</li>
+        <li>Wash Care: Hand Wash Only</li>
+        <li>Fabric Type: Cotton Blend</li>
+        <li>Pattern name: Solid</li>
+        <li>Closure Type: Buttoned</li>
+        <li>Sleeve Type: long sleeve; Collar Style: Classic Collar</li>
+    </ul>
+{% endblock %}
+
+{% block table %}
+    <table class="technical">
+        <tr>
+            <td class="col1">Product Dimensions</td>
+            <td class="col2">20 x 15 x 5 cm; 300 Grams</td>
+        </tr>
+        <tr>
+            <td class="col1">Date First Available</td>
+            <td class="col2">26 November 2020</td>
+        </tr>
+        <tr>
+            <td class="col1">Manufacturer</td>
+            <td class="col2">FINIVO Fashion</td>
+        </tr>
+        <tr>
+            <td class="col1">ASIN</td>
+            <td class="col2">B08PDFG9FN</td>
+        </tr>
+        <tr>
+            <td class="col1">Country of Origin</td>
+            <td class="col2">Japan</td>
+        </tr>
+        <tr>
+            <td class="col1">Department</td>
+            <td class="col2">Men</td>
+        </tr>
+        <tr>
+            <td class="col1">Item Weight</td>
+            <td class="col2">300 g</td>
+        </tr>
+        <tr>
+            <td class="col1">Amazon Bestseller Rank</td>
+            <td class="col2">#2,496 in Clothing & Accessories (See Top 100 in Clothing & Accessories)
+                #56 in Men's Casual Shirts</td>
+        </tr>
+        <tr>
+            <td class="col1">Customer Ratings</td>
+            <td class="col2">3.8 out of 5 stars</td>
+        </tr>
+    </table>
+{% endblock %}

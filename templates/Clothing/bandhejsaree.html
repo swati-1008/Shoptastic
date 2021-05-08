@@ -1,0 +1,93 @@
+{% extends 'Clothing/base.html' %}
+{% load static %}
+
+{% block display_image %}
+<div id="nail0" class="carousel slide display" data-ride="carousel" data-interval="0">
+    <!-- Carousel indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="nail0" data-slide-to="0" class="active"></li>
+        <li data-target="#nail0" data-slide-to="1"></li>
+        <li data-target="#nail0" data-slide-to="2"></li>
+        <li data-target="#nail0" data-slide-to="3"></li>
+        <li data-target="#nail0" data-slide-to="4"></li>
+    </ol>
+     <!-- carousel items -->
+     <div class="carousel-inner">
+        <div class="item active">
+            <img src="{% static 'images/clothing/bandhejsaree/bandhejsaree1.jpeg' %}" alt="Bandhani Bandhej Khadi Silk Saree" class="clothing" style=" height: 800px; margin-top: 100px;">
+        </div>
+        <div class="item">
+            <img src="{% static 'images/clothing/bandhejsaree/bandhejsaree2.jpeg' %}" alt="Bandhani Bandhej Khadi Silk Saree" class="clothing" style="height: 800px; margin-top: 100px;">
+        </div>
+        <div class="item">
+            <img src="{% static 'images/clothing/bandhejsaree/bandhejsaree3.jpeg' %}" alt="Bandhani Bandhej Khadi Silk Saree" class="clothing">
+        </div>
+        <div class="item">
+            <img src="{% static 'images/clothing/bandhejsaree/bandhejsaree4.jpeg' %}" alt="Bandhani Bandhej Khadi Silk Saree" class="clothing" style="height: 800px; margin-top: 100px;">
+        </div>
+        <div class="item">
+            <img src="{% static 'images/clothing/bandhejsaree/bandhejsaree5.jpeg' %}" alt="Bandhani Bandhej Khadi Silk Saree" class="clothing">
+        </div>
+    </div>
+    <!-- Carousel controls -->
+    <a class="carousel-control left control" href="#nail0" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="carousel-control right control" href="#nail0" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>
+{% endblock %}
+
+{% block features %}
+    <ul>
+        <li>Care Instructions: Normal Wash, Or Dry Clean</li>
+        <li>Fabric Saree- Khadi Silk || Blouse- Khadi Silk</li>
+        <li>Dimension:- Length:- 5.5Mtr. + 0.8Mtr. = 6.3Mtr.</li>
+        <li>Content - 1 Saree with 1 Blouse Piece</li>
+        <li>Printed Silk Saree</li>
+        <li>Product color may slightly vary due to photographic lighting sources on your monitor settings or device setting and lighting used in mode</li>
+    </ul>
+{% endblock %}
+
+{% block table %}
+    <table class="technical">
+        <tr>
+            <td class="col1">Product Dimensions</td>
+            <td class="col2">22.86 x 5.08 x 27.94 cm; 449 Grams</td>
+        </tr>
+        <tr>
+            <td class="col1">Date First Available</td>
+            <td class="col2">21 January 2021</td>
+        </tr>
+        <tr>
+            <td class="col1">Manufacturer</td>
+            <td class="col2">Cloth Clock</td>
+        </tr>
+        <tr>
+            <td class="col1">ASIN</td>
+            <td class="col2">B08TTTP5SS</td>
+        </tr>
+        <tr>
+            <td class="col1">Country of Origin</td>
+            <td class="col2">India</td>
+        </tr>
+        <tr>
+            <td class="col1">Department</td>
+            <td class="col2">Women</td>
+        </tr>
+        <tr>
+            <td class="col1">Item Weight</td>
+            <td class="col2">449 g</td>
+        </tr>
+        <tr>
+            <td class="col1">Amazon Bestseller Rank</td>
+            <td class="col2">#8,676 in Clothing & Accessories (See Top 100 in Clothing & Accessories)
+                #376 in Women's Sarees</td>
+        </tr>
+        <tr>
+            <td class="col1">Customer Ratings</td>
+            <td class="col2">3.6 out of 5 stars</td>
+        </tr>
+    </table>
+{% endblock %}

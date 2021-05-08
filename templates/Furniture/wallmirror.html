@@ -1,0 +1,148 @@
+{% extends 'Furniture/base.html' %}
+{% load static %}
+
+{% block display_image %}
+<div id="nail0" class="carousel slide display" data-ride="carousel" data-interval="0">
+    <!-- Carousel indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="nail0" data-slide-to="0" class="active"></li>
+        <li data-target="#nail0" data-slide-to="1"></li>
+        <li data-target="#nail0" data-slide-to="2"></li>
+        <li data-target="#nail0" data-slide-to="3"></li>
+        <li data-target="#nail0" data-slide-to="4"></li>
+    </ol>
+     <!-- carousel items -->
+     <div class="carousel-inner">
+        <div class="item active">
+            <img src="{% static 'images/furniture/wallmirror/wallmirror1.jpeg' %}" alt="Hosley Decorative Iron Wall Mirror" class="furniture">
+        </div>
+        <div class="item">
+            <img src="{% static 'images/furniture/wallmirror/wallmirror2.jpeg' %}" alt="Hosley Decorative Iron Wall Mirror" class="furniture">
+        </div>
+        <div class="item">
+            <img src="{% static 'images/furniture/wallmirror/wallmirror3.jpeg' %}" alt="Hosley Decorative Iron Wall Mirror" class="furniture">
+        </div>
+        <div class="item">
+            <img src="{% static 'images/furniture/wallmirror/wallmirror4.jpeg' %}" alt="Hosley Decorative Iron Wall Mirror" class="furniture">
+        </div>
+        <div class="item">
+            <img src="{% static 'images/furniture/wallmirror/wallmirror5.jpeg' %}" alt="Hosley Decorative Iron Wall Mirror" class="furniture">
+        </div>
+    </div>
+    <!-- Carousel controls -->
+    <a class="carousel-control left control" href="#nail0" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="carousel-control right control" href="#nail0" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>
+{% endblock %}
+
+{% block features %}
+    <table cellpadding="10px" cellspacing="10px" class="features">
+        <tr>
+            <td class="features"><strong>Material</strong></td>
+            <td class="features">Metal</td>
+        </tr>
+        <tr>
+            <td class="features"><strong>Item Dimensions (L x W x H)</strong></td>
+            <td class="features">31 x 1.5 x 31 Centimeters</td>
+        </tr>
+        <tr>
+            <td class="features"><strong>Item Weight</strong></td>
+            <td class="features">0.46 Kilograms</td>
+        </tr>
+        <tr>
+            <td class="features"><strong>Mounting Type</strong></td>
+            <td class="features">Wall Mount</td>
+        </tr>
+        <tr>
+            <td class="features"><strong>Item Shape</strong></td>
+            <td class="features">Rounded</td>
+        </tr>
+    </table>
+{% endblock %}
+
+{% block table %}
+    <table>
+        <tr>
+            <td>
+                <h3 style="padding-left: 20px; margin-top: -80px;">Technical Details</h3>
+                <hr style="width: 700px; margin-left: -5px;">
+                <table class="technical">
+                    <tr>
+                    <td class="col1">Color</td>
+                    <td class="col2">Black</td>
+                    </tr>
+                    <tr>
+                    <td class="col1">Product Dimensions	</td>
+                    <td class="col2">31 x 1.5 x 31 cm; 460 Grams</td>
+                    </tr>
+                    <tr>
+                    <td class="col1">Is Assembly Required</td>
+                    <td class="col2">No</td>
+                    </tr>
+                    <tr>
+                    <td class="col1">Primary Material</td>
+                    <td class="col2">Metal</td>
+                    </tr>
+                    <tr>
+                    <td class="col1">Finish Type</td>
+                    <td class="col2">Powder Coated</td>
+                    </tr>
+                    <tr>
+                    <td class="col1">Item Shape</td>
+                    <td class="col2">Round</td>
+                    </tr>
+                    <tr>
+                    <td class="col1">Shipping Weight</td>
+                    <td class="col2">1.41 Kilograms</td>
+                    </tr>
+                    <tr>
+                    <td class="col1">What is in the Box</td>
+                    <td class="col2">2 Mirrors</td>
+                    </tr>
+                    <tr>
+                    <td class="col1">Country of Origin</td>
+                    <td class="col2">India</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <h3 style="margin-left: 100px; padding-left: 20px; margin-top: -10px">Additional Information</h3>
+                <hr style="margin-left: 100px; width: 700px;">
+                <table class="technical" style="margin-left: 100px;">
+                    <tr>
+                    <td class="col1">ASIN</td>
+                    <td class="col2">B01GHXY8LU</td>
+                    </tr>
+                    <tr>
+                    <td class="col1">Customer Reviews</td>
+                    <td class="col2">4.2 out of 5 stars</td>
+                    </tr>
+                    <tr>
+                    <td class="col1">Best Sellers Rank</td>
+                    <td class="col2">#68,645 in Home & Kitchen (See Top 100 in Home & Kitchen)
+                        <br>
+                        #129 in Wall Mirrors
+                    </td>
+                    </tr>
+                    <tr>
+                    <td class="col1">Date First Available</td>
+                    <td class="col2">2 June 2016</td>
+                    </tr>
+                </table>
+                <br>
+                <br>
+                <h3 style="margin-left: 100px;">Feedback</h3>
+                <hr style="width: 700px; margin-left: 100px;">
+                <form style="margin-left: 100px;" action="mailto:swati100897@gmail.com" method="post" enctype="text/plain">
+                    <textarea placeholder="Any feedbacks or suggestions.." rows="4" cols="80" style="padding: 5px;"></textarea>
+                    <br />
+                    <input type="submit" />
+                </form>
+            </td>
+        </tr>
+    </table>
+{% endblock %}
