@@ -14,29 +14,84 @@
      <!-- carousel items -->
      <div class="carousel-inner">
         <div class="item active">
-            <img src="{% static 'images/clothing/taslarbabyjumpsuit/babyjumpsuit1.jpeg' %}" alt="TASLAR Unisex Baby Flannel Jumpsuit" class="clothing">
+            <img src="{% static 'images/clothing/taslarbabyjumpsuit/babyjumpsuit1.jpeg' %}" alt="TASLAR Unisex Baby Flannel Jumpsuit" style="width: 480px; height: 600px; margin-top: 250px; margin-left: 100px;">
         </div>
         <div class="item">
-            <img src="{% static 'images/clothing/taslarbabyjumpsuit/babyjumpsuit2.jpeg' %}" alt="TASLAR Unisex Baby Flannel Jumpsuit" class="clothing">
+            <img src="{% static 'images/clothing/taslarbabyjumpsuit/babyjumpsuit2.jpeg' %}" alt="TASLAR Unisex Baby Flannel Jumpsuit" style="width: 480px; height: 600px; margin-top: 250px; margin-left: 100px;">
         </div>
         <div class="item">
-            <img src="{% static 'images/clothing/taslarbabyjumpsuit/babyjumpsuit3.jpeg' %}" alt="TASLAR Unisex Baby Flannel Jumpsuit" class="clothing">
+            <img src="{% static 'images/clothing/taslarbabyjumpsuit/babyjumpsuit3.jpeg' %}" alt="TASLAR Unisex Baby Flannel Jumpsuit" style="width: 480px; height: 600px; margin-top: 250px; margin-left: 100px;">
         </div>
         <div class="item">
-            <img src="{% static 'images/clothing/taslarbabyjumpsuit/babyjumpsuit4.jpeg' %}" alt="TASLAR Unisex Baby Flannel Jumpsuit" class="clothing">
+            <img src="{% static 'images/clothing/taslarbabyjumpsuit/babyjumpsuit4.jpeg' %}" alt="TASLAR Unisex Baby Flannel Jumpsuit" style="width: 480px; height: 600px; margin-top: 250px; margin-left: 100px;">
         </div>
         <div class="item">
-            <img src="{% static 'images/clothing/taslarbabyjumpsuit/babyjumpsuit5.jpeg' %}" alt="TASLAR Unisex Baby Flannel Jumpsuit" class="clothing" style="margin-top: 150px;">
+            <img src="{% static 'images/clothing/taslarbabyjumpsuit/babyjumpsuit5.jpeg' %}" alt="TASLAR Unisex Baby Flannel Jumpsuit" style="width: 480px; height: 600px; margin-top: 250px; margin-left: 100px;">
         </div>
     </div>
     <!-- Carousel controls -->
-    <a class="carousel-control left control" href="#nail0" data-slide="prev">
+    <a class="carousel-control left control" href="#nail0" data-slide="prev" style="margin-top: 200px;">
         <span class="glyphicon glyphicon-chevron-left"></span>
     </a>
-    <a class="carousel-control right control" href="#nail0" data-slide="next">
+    <a class="carousel-control right control" href="#nail0" data-slide="next" style="margin-top: 200px;">
         <span class="glyphicon glyphicon-chevron-right"></span>
     </a>
 </div>
+{% endblock %}
+
+{% block related_product %}
+    <div class="row left">
+        <div class="col-sm-2">
+            <a href="{% url 'Clothing:zeellehenga' %}">
+                <img src="{% static 'images/clothing/zeellehenga/zeellehenga1.jpeg' %}" alt="Zeel Lehenga" style="height: 196px; width: 196px;">
+                <div style="padding-left: 40px;">
+                    <h4>Zeel Lehenga</h4>
+                    <h4 style="padding-left: 5px;">Zeel Clothing</h4>
+                    <h4 style="padding-left: 30px;">3,349</h4>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-2">
+            <a href="{% url 'Clothing:mensweatshirt' %}">
+                <img src="{% static 'images/clothing/mensweatshirt/sweatshirt1.jpeg' %}" alt="Men Sweat Shirt" style="height: 196px; width: 196px;">
+                <div style="padding-left: 50px;">
+                    <h4>Men Sweat Shirt</h4>
+                    <h4 style="padding-left: 40px;">LEWEL</h4>
+                    <h4 style="padding-left: 50px;">469</h4>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-2">
+            <a href="{% url 'Clothing:menshirt' %}">
+                <img src="{% static 'images/clothing/menshirt/shirt1.jpeg' %}" alt="Men ShirtCase" style="height: 196px; width: 196px;">
+                <div style="padding-left: 60px;">
+                    <h4>Men Shirt</h4>
+                    <h4 style="padding-left: 5px;">FINIVO</h4>
+                    <h4 style="padding-left: 20px;">687</h4>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-2">
+            <a href="{% url 'Clothing:babyromper' %}">
+                <img src="{% static 'images/clothing/babyromper/babyromper1.jpeg' %}" alt="Baby Romper" style="height: 196px; width: 196px;">
+                <div style="padding-left: 50px;">
+                    <h4>Baby Romper</h4>
+                    <h4 style="padding-left: 10px;">Popees</h4>
+                    <h4 style="padding-left: 25px;">435</h4>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-2">
+            <a href="{% url 'Clothing:bandhejsaree' %}">
+                <img src="{% static 'images/clothing/bandhejsaree/bandhejsaree1.jpeg' %}" alt="Bandhej Saree" style="height: 196px; width: 196px;">
+                <div style="padding-left: 20px;">
+                    <h4>Bandhej Saree</h4>
+                    <h4 style="padding-left: 10px;">ClothClock</h4>
+                    <h4 style="padding-left: 30px;">399</h4>
+                </div>
+            </a>
+        </div>
+    </div>
 {% endblock %}
 
 {% block features %}
@@ -51,43 +106,60 @@
 {% endblock %}
 
 {% block table %}
-    <table class="technical">
+    <table>
         <tr>
-            <td class="col1">Product Dimensions</td>
-            <td class="col2">29.5 x 28 x 11.6 cm; 350 Grams</td>
-        </tr>
-        <tr>
-            <td class="col1">Date First Available</td>
-            <td class="col2">24 March 2019</td>
-        </tr>
-        <tr>
-            <td class="col1">Manufacturer</td>
-            <td class="col2">Taslar</td>
-        </tr>
-        <tr>
-            <td class="col1">ASIN</td>
-            <td class="col2">B07PQS98D6</td>
-        </tr>
-        <tr>
-            <td class="col1">Country of Origin</td>
-            <td class="col2">China</td>
-        </tr>
-        <tr>
-            <td class="col1">Department</td>
-            <td class="col2">Unisex</td>
-        </tr>
-        <tr>
-            <td class="col1">Item Weight</td>
-            <td class="col2">350 g</td>
-        </tr>
-        <tr>
-            <td class="col1">Amazon Bestseller Rank</td>
-            <td class="col2">#23,262 in Clothing & Accessories (See Top 100 in Clothing & Accessories)
-                #691 in Baby Boys' Clothing</td>
-        </tr>
-        <tr>
-            <td class="col1">Customer Ratings</td>
-            <td class="col2">4.3 out of 5 stars</td>
+            <td>
+                <h3 style="padding-left: 20px;">Product Details</h3>
+                <hr style="width: 700px; margin-left: -5px;">
+                <table class="technical">
+                    <tr>
+                        <td class="col1">Product Dimensions</td>
+                        <td class="col2">29.5 x 28 x 11.6 cm; 350 Grams</td>
+                    </tr>
+                    <tr>
+                        <td class="col1">Date First Available</td>
+                        <td class="col2">24 March 2019</td>
+                    </tr>
+                    <tr>
+                        <td class="col1">Manufacturer</td>
+                        <td class="col2">Taslar</td>
+                    </tr>
+                    <tr>
+                        <td class="col1">ASIN</td>
+                        <td class="col2">B07PQS98D6</td>
+                    </tr>
+                    <tr>
+                        <td class="col1">Country of Origin</td>
+                        <td class="col2">China</td>
+                    </tr>
+                    <tr>
+                        <td class="col1">Department</td>
+                        <td class="col2">Unisex</td>
+                    </tr>
+                    <tr>
+                        <td class="col1">Item Weight</td>
+                        <td class="col2">350 g</td>
+                    </tr>
+                    <tr>
+                        <td class="col1">Amazon Bestseller Rank</td>
+                        <td class="col2">#23,262 in Clothing & Accessories (See Top 100 in Clothing & Accessories)
+                            #691 in Baby Boys' Clothing</td>
+                    </tr>
+                    <tr>
+                        <td class="col1">Customer Ratings</td>
+                        <td class="col2">4.3 out of 5 stars</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <h3 style="margin-left: 100px; padding-left: 20px; margin-top: -200px">Feedback</h3>
+                <hr style="margin-left: 100px; width: 700px;">
+                <form style="margin-left: 100px;" action="mailto:swati100897@gmail.com" method="post" enctype="text/plain">
+                    <textarea placeholder="Any feedbacks or suggestions.." rows="4" cols="80" style="padding: 5px;"></textarea>
+                    <br />
+                    <input type="submit" />
+                </form>
+            </td>
         </tr>
     </table>
 {% endblock %}

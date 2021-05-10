@@ -7,7 +7,7 @@ def oneplus(request):
         'price': '59,999',
         'color': 'Ultramarine Blue',
         'product_name': 'One Plus 8 Pro',
-        'product_specs': '12 GB Ram + 256 GB Storage'
+        'product_specs': '12 GB Ram + 256 GB Storage',
     }
     return render(request, 'Mobiles/onepluseightpro.html', context=context)
 

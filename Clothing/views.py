@@ -6,7 +6,7 @@ def zeellehenga(request):
     context = {
         'product_name': "Zeel Clothing Women's Organza Semi-stitched Lehenga Choli",
         'price': '3,349'
-    }
+}
     return render(request, 'Clothing/zeellehenga.html', context=context)
 
 def babyjumpsuit(request):

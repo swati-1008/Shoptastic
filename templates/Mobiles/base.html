@@ -95,6 +95,9 @@
     </form>
     <hr>
     <h1 class="left">Products related to this item</h1>
+    <!-- {{ product_name.title }} -->
+    {% block related_product %}
+    {% endblock %}
     <hr>
     <h2 class="left" style="line-height: 1.5;">{{ product_name }} Mobile Information</h2>
     <p class="left" style="line-height: 1.5;">Style Name: <strong>{{ product_specs }}</strong> | Colour: <strong>{{ color }}</strong></p>

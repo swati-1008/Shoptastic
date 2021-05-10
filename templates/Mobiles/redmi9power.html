@@ -14,28 +14,83 @@
          <!-- carousel items -->
         <div class="carousel-inner">
             <div class="item active">
-                <img src="{% static 'images/mobiles/redmi9power/redmi9power1.jpg' %}" alt="Redmi 9 Power" style="height: 600px; width: 600px; margin-top: 200px; margin-left: 80px;">
+                <img src="{% static 'images/mobiles/redmi9power/redmi9power1.jpg' %}" alt="Redmi 9 Power" style="height: 600px; width: 600px; margin-top: 250px; margin-left: 80px;">
             </div>
             <div class="item">
-                <img src="{% static 'images/mobiles/redmi9power/redmi9power2.jpeg' %}" alt="Redmi 9 Power" style="height: 700px; width: 400px; margin-top: 150px; margin-left: 150px;">
+                <img src="{% static 'images/mobiles/redmi9power/redmi9power2.jpeg' %}" alt="Redmi 9 Power" style="height: 600px; width: 300px; margin-top: 250px; margin-left: 200px;">
             </div>
             <div class="item">
-                <img src="{% static 'images/mobiles/redmi9power/redmi9power3.jpeg' %}" alt="Redmi 9 Power" style="height: 600px; width: 600px; margin-top: 200px; margin-left: 80px;">
+                <img src="{% static 'images/mobiles/redmi9power/redmi9power3.jpeg' %}" alt="Redmi 9 Power" style="height: 600px; width: 600px; margin-top: 250px; margin-left: 80px;">
             </div>
             <div class="item">
-                <img src="{% static 'images/mobiles/redmi9power/redmi9power4.jpeg' %}" alt="Redmi 9 Power" style="height: 600px; width: 700px; margin-top: 200px; margin-left: 80px;">
+                <img src="{% static 'images/mobiles/redmi9power/redmi9power4.jpeg' %}" alt="Redmi 9 Power" style="height: 600px; width: 700px; margin-top: 250px; margin-left: 20px;">
             </div>
             <div class="item">
-                <img src="{% static 'images/mobiles/redmi9power/redmi9power5.png' %}" alt="Redmi 9 Power" style="height: 700px; width: 500px; margin-top: 150px; margin-left: 80px;">
+                <img src="{% static 'images/mobiles/redmi9power/redmi9power5.png' %}" alt="Redmi 9 Power" style="height: 600px; width: 300px; margin-top: 250px; margin-left: 200px;">
             </div>
         </div>
         <!-- Carousel controls -->
-        <a class="carousel-control left" href="#nail1" data-slide="prev">
+        <a class="carousel-control left" href="#nail1" data-slide="prev" style="margin-top: 200px;">
             <span class="glyphicon glyphicon-chevron-left"></span>
         </a>
-        <a class="carousel-control right" href="#nail1" data-slide="next">
+        <a class="carousel-control right" href="#nail1" data-slide="next" style="margin-top: 200px;">
             <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
+    </div>
+{% endblock %}
+
+{% block related_product %}
+    <div class="row left">
+        <div class="col-sm-2">
+            <a href="{% url 'Mobiles:oneplus' %}">
+                <img src="{% static 'images/mobiles/onepluseightpro/oneplus1.jpeg' %}" alt="One Plus 8 Pro" style="height: 196px; width: 196px;">
+                <div style="padding-left: 40px;">
+                    <h4>One Plus 8 Pro</h4>
+                    <h4 style="margin-left: -10px;">Ultramarine Blue</h4>
+                    <h4 style="padding-left: 30px;">59,999</h4>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-2">
+            <a href="{% url 'Mobiles:samsunggalaxym51' %}">
+                <img src="{% static 'images/mobiles/samsunggalaxym51/samsunggalaxym511.jpeg' %}" alt="Samsung Galaxy M51" style="height: 196px; width: 196px;">
+                <div style="padding-left: 25px;">
+                    <h4>Samsung Galaxy M51</h4>
+                    <h4 style="padding-left: 25px;">Electric Blue</h4>
+                    <h4 style="padding-left: 50px;">22,999</h4>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-2">
+            <a href="{% url 'Mobiles:iphone12mini' %}">
+                <img src="{% static 'images/mobiles/iphone12mini/iphone12mini1.jpeg' %}" alt="IPhone 12 Mini" style="height: 196px; width: 196px;">
+                <div style="padding-left: 35px;">
+                    <h4>IPhone 12 Mini</h4>
+                    <h4 style="padding-left: 40px;">Blue</h4>
+                    <h4 style="padding-left: 35px;">69,900</h4>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-2">
+            <a href="{% url 'Mobiles:vivoy20' %}">
+                <img src="{% static 'images/mobiles/vivoy20/vivoy201.jpeg' %}" alt="Vivo Y20" style="height: 196px; width: 196px;">
+                <div style="padding-left: 65px;">
+                    <h4>Vivo Y20</h4>
+                    <h4 style="margin-left: -10px;">Purist Blue</h4>
+                    <h4 style="padding-left: px;">12,990</h4>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-2">
+            <a href="{% url 'Mobiles:nokia3.4' %}">
+                <img src="{% static 'images/mobiles/nokia3.4/nokia3.41.jpeg' %}" alt="Nokia 3.4" style="height: 196px; width: 196px;">
+                <div style="padding-left: 50px;">
+                    <h4>Nokia 3.4</h4>
+                    <h4 style="padding-left: 20px;">Fjord</h4>
+                    <h4 style="padding-left: 10px;">11,999</h4>
+                </div>
+            </a>
+        </div>
     </div>
 {% endblock %}
 
