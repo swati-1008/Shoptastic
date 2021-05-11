@@ -95,7 +95,6 @@
     </form>
     <hr>
     <h1 class="left">Products related to this item</h1>
-    <!-- {{ product_name.title }} -->
     {% block related_product %}
     {% endblock %}
     <hr>
@@ -108,5 +107,7 @@
     <br>
     <br>
     <h2 class="left">Customer Reviews and Comments to be added here</h2>
+    {% block comments %}
+    {% endblock %}
     <script src="{% static 'Mobiles/js/mobile.js' %}" charset="utf-8"></script>
 {% endblock %}
