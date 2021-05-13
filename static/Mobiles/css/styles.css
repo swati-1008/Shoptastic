@@ -120,7 +120,7 @@ button.sub:hover {
   width: 110px;
   margin: 0 auto;
   float: left;
-  margin-left: 30%;
+  margin-left: 100px;
 }
 
 .star-ratings-sprite-rating {
@@ -181,6 +181,26 @@ button.sub:hover {
   padding-left: 10px;
   line-height: 30px;
   color: white;
+}
+
+.inpbox {
+    float: left;
+    margin-left: 20%;
+    border-radius: 5px;
+    width: 100%;
+    height: 80px;
+    padding: 5px 10px;
+}
+
+.comments {
+    padding-left: 30%;
+    overflow: hidden;
+    width: 75%;
+}
+
+.reviews {
+    height: 450px;
+    overflow-y: scroll;
 }
 
 

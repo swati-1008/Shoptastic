@@ -208,3 +208,132 @@
         </tr>
     </table>
 {% endblock %}
+
+{% block comments %}
+<table>
+    <tr>
+        <!-- Customer Reviews Rating, Rating by Feature, Post your Review -->
+        <td>
+            <table>
+                <!-- Customer Reviews Rating -->
+                <tr>
+                    <!-- Show previous ratings - pass width from views.py as 
+                        (20 * 5 + 10 * 4 + 40 * 3 + 5 * 2 + 25 * 1) / 100
+                        where out of 100 ratings, 20 people gave 5 stars, 10 people gave 4 stars, 40 people gave 3 stars,
+                        5 people gave 2 stars, and 25 people gave 1 star
+                        Now final rating = sum of rating / total rating
+                        width percentage = final rating * 100 / 5 (because it is a 5 scale rating)
+                    -->
+                    <div class="left">
+                        <h3 class="left">Customer Reviews</h3>
+                        <div class="star-ratings-sprite">
+                            <span style="width:52%" class="star-ratings-sprite-rating"></span>
+                        </div>
+                        <h4 style="float: left; padding-left: 20px; margin-top: 5px;">{{ final_rating }} out of 5</h4>
+                        <br>
+                        <h5 style="float: left; margin-left: 100px">{{ total_ratings }} global ratings</h5>
+                        <br>
+                        <div style="float: left;" class="left charts">
+                            <div class="chart chart--dev">
+                              <ul class="chart--horiz">
+                                <li class="chart__bar" style="width: 98%;">
+                                  <span class="chart__label">
+                                    5 star
+                                  </span>
+                                </li>
+                                <li class="chart__bar" style="width: 98%;">
+                                  <span class="chart__label">
+                                    4 star
+                                  </span>
+                                </li>
+                                <li class="chart__bar" style="width: 70%;">
+                                  <span class="chart__label">
+                                    3 star
+                                  </span>
+                                </li>
+                                <li class="chart__bar" style="width: 60%;">
+                                  <span class="chart__label">
+                                    2 star
+                                  </span>
+                                </li>
+                                <li class="chart__bar" style="width: 25%;">
+                                  <span class="chart__label">
+                                    1 star
+                                  </span>
+                                </li>
+                              </ul>
+                            </div>
+                        </div>
+                    </div>
+                </tr>
+                <!-- Post your Review and Rating -->
+                <tr>
+                    <div class="left">
+                        <h3 class="left" style="float: left;">Post your Rating and Review</h3>
+                        <br>
+                        <!-- Get rating input from user -->
+                        <div class="rating rating2" style="margin-left: -20%;">
+                            <a href="#5" title="Give 5 stars">★</a>
+                            <a href="#4" title="Give 4 stars">★</a>
+                            <a href="#3" title="Give 3 stars">★</a>
+                            <a href="#2" title="Give 2 stars">★</a>
+                            <a href="#1" title="Give 1 star">★</a>
+                        </div>
+                        <textarea name="comment" placeholder="Share your thoughts with other customers..." class="inpbox"></textarea>
+                    </div>
+                </tr>
+            </table>
+        </td>
+        <!-- Previous Comments on the product -->
+        <td class="comments">
+            <h3><strong>Top Reviews</strong></h3>
+            <div class="reviews">
+                <div>
+                    <h4><i class="fas fa-user-circle" style="size: 25x; color: gray;"></i>&nbsp;&nbsp;Swati</h4>
+                    <div class="star-ratings-sprite" style="margin-left: 10px;">
+                        <span style="width:90%" class="star-ratings-sprite-rating"></span>
+                    </div>
+                    <br>
+                    <br>
+                    <strong>Awesome phone</strong>
+                    <p style="color: gray;">Reviewed in India on 13th May 2021</p>
+                    <p>Battery life is very good, but very expensive</p>
+                </div>
+                <div>
+                    <h4><i class="fas fa-user-circle" style="size: 25x; color: gray;"></i>&nbsp;&nbsp;Pulkit</h4>
+                    <div class="star-ratings-sprite" style="margin-left: 10px;">
+                        <span style="width:20%" class="star-ratings-sprite-rating"></span>
+                    </div>
+                    <br>
+                    <br>
+                    <strong>Worst phone</strong>
+                    <p style="color: gray;">Reviewed in India on 13th May 2021</p>
+                    <p>Worst phone, overheats a lot</p>
+                </div>
+                <div>
+                    <h4><i class="fas fa-user-circle" style="size: 25x; color: gray;"></i>&nbsp;&nbsp;Aqib</h4>
+                    <div class="star-ratings-sprite" style="margin-left: 10px;">
+                        <span style="width:50%" class="star-ratings-sprite-rating"></span>
+                    </div>
+                    <br>
+                    <br>
+                    <strong>Average phone</strong>
+                    <p style="color: gray;">Reviewed in India on 13th May 2021</p>
+                    <p>Average phone, can buy</p>
+                </div>
+                <div>
+                    <h4><i class="fas fa-user-circle" style="size: 25x; color: gray;"></i>&nbsp;&nbsp;Demo</h4>
+                    <div class="star-ratings-sprite" style="margin-left: 10px;">
+                        <span style="width:80%" class="star-ratings-sprite-rating"></span>
+                    </div>
+                    <br>
+                    <br>
+                    <strong>Good</strong>
+                    <p style="color: gray;">Reviewed in India on 13th May 2021</p>
+                    <p>Expensive, but good</p>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+{% endblock %}
