@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from .forms import UserForm
+from django.contrib.auth.models import User
+from .models import *
 
 
 from django.urls import reverse
@@ -20,7 +22,12 @@ def register(request):
             user = user_form.save()
             user.set_password(user.password)        # Hashing the passwords -> Encrypting them
             user.save()
+            length = len(Customer.objects.all())
+            customer = Customer.objects.create(uid='CUS' + str(length + 1), user=user)
+            customer.save()
             registered = True
+            if user.is_authenticated:
+                return HttpResponseRedirect(reverse('Register_Login:user_login'))
         else:
             print(user_form.errors)
     else:
