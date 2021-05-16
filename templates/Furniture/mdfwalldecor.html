@@ -14,19 +14,19 @@
      <!-- carousel items -->
      <div class="carousel-inner">
         <div class="item active">
-            <img src="{% static 'images/furniture/mdfwalldecor/mdfwall1.jpeg' %}" alt="MDF Wall Decor" style="width: 480px; height: 600px; margin-top: 250px; margin-left: 100px;">
+            <img src="{{ image1 }}" alt="{{ product_name }}" style="width: 480px; height: 600px; margin-top: 250px; margin-left: 100px;">
         </div>
         <div class="item">
-            <img src="{% static 'images/furniture/mdfwalldecor/mdfwall2.jpeg' %}" alt="MDF Wall Decor" style="width: 480px; height: 600px; margin-top: 250px; margin-left: 100px;">
+            <img src="{{ image2 }}" alt="{{ product_name }}" style="width: 480px; height: 600px; margin-top: 250px; margin-left: 100px;">
         </div>
         <div class="item">
-            <img src="{% static 'images/furniture/mdfwalldecor/mdfwall3.jpeg' %}" alt="MDF Wall Decor" style="width: 480px; height: 600px; margin-top: 250px; margin-left: 100px;">
+            <img src="{{ image3 }}" alt="{{ product_name }}" style="width: 480px; height: 600px; margin-top: 250px; margin-left: 100px;">
         </div>
         <div class="item">
-            <img src="{% static 'images/furniture/mdfwalldecor/mdfwalldecor4.png' %}" alt="MDF Wall Decor" style="width: 480px; height: 600px; margin-top: 250px; margin-left: 100px;">
+            <img src="{{ image4 }}" alt="{{ product_name }}" style="width: 480px; height: 600px; margin-top: 250px; margin-left: 100px;">
         </div>
         <div class="item">
-            <img src="{% static 'images/furniture/mdfwalldecor/mdfwall5.jpeg' %}" alt="MDF Wall Decor" style="width: 480px; height: 600px; margin-top: 250px; margin-left: 100px;">
+            <img src="{{ image5 }}" alt="{{ product_name }}" style="width: 480px; height: 600px; margin-top: 250px; margin-left: 100px;">
         </div>
     </div>
     <!-- Carousel controls -->
@@ -94,120 +94,9 @@
     </div>
 {% endblock %}
 
-{% block features %}
-    <table cellpadding="10px" cellspacing="10px" class="features">
-        <tr>
-            <td class="features"><strong>Material</strong></td>
-            <td class="features">Wood</td>
-        </tr>
-        <tr>
-            <td class="features"><strong>Item Dimensions (L x W x H)</strong></td>
-            <td class="features">36 x 12 x 31 Centimeters</td>
-        </tr>
-        <tr>
-            <td class="features"><strong>Item Weight</strong></td>
-            <td class="features">1 Kilograms</td>
-        </tr>
-        <tr>
-            <td class="features"><strong>Installation Type</strong></td>
-            <td class="features">Wall Mount</td>
-        </tr>
-        <tr>
-            <td class="features"><strong>Number of Shelves</strong></td>
-            <td class="features">6</td>
-        </tr>
-    </table>
-{% endblock %}
-
-{% block table %}
-    <table>
-        <tr>
-            <td>
-                <h3 style="padding-left: 20px;">Technical Details</h3>
-                <hr style="width: 700px; margin-left: -5px;">
-                <table class="technical">
-                    <tr>
-                    <td class="col1">Color</td>
-                    <td class="col2">Red</td>
-                    </tr>
-                    <tr>
-                    <td class="col1">Product Dimensions	</td>
-                    <td class="col2">36 x 12 x 31 cm; 1 Kilograms</td>
-                    </tr>
-                    <tr>
-                    <td class="col1">Is Assembly Required</td>
-                    <td class="col2">No</td>
-                    </tr>
-                    <tr>
-                    <td class="col1">Assembly Type</td>
-                    <td class="col2">Already Assembled</td>
-                    </tr>
-                    <tr>
-                    <td class="col1">Installation Type</td>
-                    <td class="col2">Wall Mount</td>
-                    </tr>
-                    <tr>
-                    <td class="col1">Primary Material</td>
-                    <td class="col2">Wood</td>
-                    </tr>
-                    <tr>
-                    <td class="col1">Finish Type</td>
-                    <td class="col2">Painted</td>
-                    </tr>
-                    <tr>
-                    <td class="col1">Item Shape</td>
-                    <td class="col2">Rectangular</td>
-                    </tr>
-                    <tr>
-                    <td class="col1">Shelf Material</td>
-                    <td class="col2">Floating Shelf</td>
-                    </tr>
-                    <tr>
-                    <td class="col1">Shipping Weight</td>
-                    <td class="col2">7.42 Kilograms</td>
-                    </tr>
-                    <tr>
-                    <td class="col1">Country of Origin</td>
-                    <td class="col2">India</td>
-                    </tr>
-                </table>
-            </td>
-            <td>
-                <h3 style="margin-left: 100px; padding-left: 20px; margin-top: -10px">Additional Information</h3>
-                <hr style="margin-left: 100px; width: 700px;">
-                <table class="technical" style="margin-left: 100px;">
-                    <tr>
-                    <td class="col1">ASIN</td>
-                    <td class="col2">B0795X5795</td>
-                    </tr>
-                    <tr>
-                    <td class="col1">Customer Reviews</td>
-                    <td class="col2">3.6 out of 5 stars</td>
-                    </tr>
-                    <tr>
-                    <td class="col1">Best Sellers Rank</td>
-                    <td class="col2">#14,057 in Home & Kitchen (See Top 100 in Home & Kitchen)
-                        <br>
-                        #60 in Wall Shelves
-                    </td>
-                    </tr>
-                    <tr>
-                    <td class="col1">Date First Available</td>
-                    <td class="col2">19 January 2018</td>
-                    </tr>
-                </table>
-                <br>
-                <br>
-                <h3 style="margin-left: 100px;">Feedback</h3>
-                <hr style="width: 700px; margin-left: 100px;">
-                <form style="margin-left: 100px;" action="mailto:swati100897@gmail.com" method="post" enctype="text/plain">
-                    <textarea placeholder="Any feedbacks or suggestions.." rows="4" cols="80" style="padding: 5px;"></textarea>
-                    <br />
-                    <input type="submit" />
-                </form>
-            </td>
-        </tr>
-    </table>
+{% block additional %}
+    <h3 style="margin-left: 100px; padding-left: 20px; margin-top: 10px">Additional Information</h3>
+    <hr style="margin-left: 100px; width: 700px;">
 {% endblock %}
 
 {% block comments %}
