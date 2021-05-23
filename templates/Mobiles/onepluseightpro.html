@@ -174,14 +174,18 @@
                         <h3 class="left" style="float: left;">Post your Rating and Review</h3>
                         <br>
                         <!-- Get rating input from user -->
-                        <div class="rating rating2" style="margin-left: -20%;">
-                            <a href="#5" title="Give 5 stars">★</a>
-                            <a href="#4" title="Give 4 stars">★</a>
-                            <a href="#3" title="Give 3 stars">★</a>
-                            <a href="#2" title="Give 2 stars">★</a>
-                            <a href="#1" title="Give 1 star">★</a>
-                        </div>
-                        <textarea name="comment" placeholder="Share your thoughts with other customers..." class="inpbox"></textarea>
+                        <form method="POST">
+                            {% csrf_token %}
+                            <div class="rating rating2" style="margin-left: -20%;">
+                                <a href="#5" title="Give 5 stars">★</a>
+                                <a href="#4" title="Give 4 stars">★</a>
+                                <a href="#3" title="Give 3 stars">★</a>
+                                <a href="#2" title="Give 2 stars">★</a>
+                                <a href="#1" title="Give 1 star">★</a>
+                            </div>
+                            <textarea name="comment" placeholder="Share your thoughts with other customers..." class="inpbox" name="comment"></textarea>
+                            <input class="post" type="submit" value="Post">
+                        </form>
                     </div>
                 </tr>
             </table>

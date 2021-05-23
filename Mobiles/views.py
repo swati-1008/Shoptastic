@@ -1,14 +1,13 @@
 from django.shortcuts import render
 from .models import *
+from django.contrib.auth.models import User
 
 # Create your views here.
 
 def oneplus(request):
-    # row = Mobiles.objects.get(product_id='MOB1')
-    # print(row.product_name)
-    # features = list(Features.objects.filter(pid=row))
-    # for i in features:
-    #     print(i.features)
+    if request.method == "POST":
+        print(request.POST.get('comment'))
+        print(request.user)
     row = Mobiles.objects.get(product_id='MOB1')
     features = list(Features.objects.filter(pid=row))
     context = {
