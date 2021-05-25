@@ -1,13 +1,16 @@
 from django.shortcuts import render
 from .models import *
 from django.contrib.auth.models import User
+from datetime import date
 
 # Create your views here.
 
 def oneplus(request):
     if request.method == "POST":
-        print(request.POST.get('comment'))
-        print(request.user)
+        u = User.objects.get(username=request.user)
+        comment = Comments(pid='MOB1', uid=u.customer.uid, comment=request.POST.get('comment'), date=date.today())
+        comment.save()
+    comments = Comments.objects.filter(pid='MOB1')
     row = Mobiles.objects.get(product_id='MOB1')
     features = list(Features.objects.filter(pid=row))
     context = {
@@ -39,7 +42,8 @@ def oneplus(request):
         'launch_date': row.launch_date,
         'manufacture_address': row.manufacture_address,
         'generic_name': row.generic_name,
-        'features': features
+        'features': features,
+        'comments': comments
     }
     return render(request, 'Mobiles/onepluseightpro.html', context=context)
 
