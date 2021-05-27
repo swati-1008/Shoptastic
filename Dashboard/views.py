@@ -4,3 +4,6 @@ from django.shortcuts import render
 
 def index(request):
     return render(request, 'Dashboard/index.html')
+
+def about(request):
+    return render(request, 'Dashboard/about_us.html')
