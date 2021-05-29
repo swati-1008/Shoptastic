@@ -7,4 +7,5 @@ app_name = 'Dashboard'
 urlpatterns = [
     path('', views.index, name='index'),
     path('about', views.about, name='about'),
+    path('product', views.add_product, name='product'),
 ]
