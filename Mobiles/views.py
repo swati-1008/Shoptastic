@@ -7,6 +7,7 @@ from datetime import date
 
 def oneplus(request):
     if request.method == "POST":
+        print(request.POST.get('comment'))
         u = User.objects.get(username=request.user)
         comment = Comments(pid='MOB1', uid=u.customer.uid, comment=request.POST.get('comment'), date=date.today())
         comment.save()
