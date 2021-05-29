@@ -1,6 +1,10 @@
 {% extends 'navbar.html' %}
 {% load static %}
 
+{% block title %}
+    {{ product_name }}
+{% endblock %}
+
 {% block head_block %}
     <link rel="stylesheet" href="{% static 'Clothing/css/styles.css' %}">
     <script src="https://kit.fontawesome.com/f6b9125e15.js" crossorigin="anonymous"></script>
@@ -9,64 +13,67 @@
 {% block body_block %}
     <table>
         <tr>
-        <td>
-            {% block display_image %}
-            {% endblock %}
-        </td>
-        <td>
-            <div class="description">
-            <h2>
-                {{ product_name }}
-            </h2>
-            <br>
-            <h3>
-                Price: <i class="fas fa-rupee-sign"></i> {{ price }}
-            </h3>
-            <h5 style="padding-left: 75px;">
-                Inclusive of all taxes
-            </h5>
-            <br>
-            <h4 id="free-delivery"></h4>
-            <h4 id="fastest-delivery"></h4>
-            <br>
-            <br>
-            <span>
-                <div class="stickers">
-                <img src="https://images-na.ssl-images-amazon.com/images/G/31/A2I-Convert/mobile/IconFarm/icon-returns._CB484059092_.png" style="width: 50px;
-                height: 50px; align: center;" alt="7 days replacement">
+            <td>
+                {% block display_image %}
+                {% endblock %}
+            </td>
+            <td>
+                <div class="description">
+                <h2>
+                    {{ product_name }} {{ product_specs }}
+                </h2>
                 <br>
-                <a href="#" title="Header" data-toggle="popover" data-placement="bottom" data-content="Content">7 days Replacement</a>
-                </div>
-                <div class="stickers">
-                <img src="https://images-na.ssl-images-amazon.com/images/G/31/A2I-Convert/mobile/IconFarm/icon-amazon-delivered._CB485933725_.png" style="width: 50px;
-                height: 50px; align: center;" alt="Home Delivered">
+                <h3>
+                    Price: <i class="fas fa-rupee-sign"></i> {{ price }}
+                </h3>
+                <h5 style="padding-left: 75px;">
+                    Inclusive of all taxes
+                </h5>
                 <br>
-                <a href="#" title="Header" data-toggle="popover" data-placement="bottom" data-content="Content">Home Delivered</a>
-                </div>
-                <div class="stickers">
-                <img src="https://images-na.ssl-images-amazon.com/images/G/31/A2I-Convert/mobile/IconFarm/icon-warranty._CB485935626_.png" style="width: 50px;
-                height: 50px; align: center;" alt="1 year warranty">
+                <h4 id="free-delivery"></h4>
+                <h4 id="fastest-delivery"></h4>
                 <br>
-                <a href="#" title="Header" data-toggle="popover" data-placement="bottom" data-content="Content">1 Year Warranty</a>
-                </div>
-                <div class="stickers">
-                <img src="https://images-na.ssl-images-amazon.com/images/G/31/A2I-Convert/mobile/IconFarm/No_contact_delivery_final._CB432269791_.png" style="width: 50px;
-                height: 50px; align: center;" alt="No Contact Delivery">
                 <br>
-                <a href="#" title="Header" data-toggle="popover" data-placement="bottom" data-content="Content">No Contact Delivery</a>
+                <span>
+                    <div class="stickers">
+                    <img src="https://images-na.ssl-images-amazon.com/images/G/31/A2I-Convert/mobile/IconFarm/icon-returns._CB484059092_.png" style="width: 50px;
+                    height: 50px; align: center;" alt="7 days replacement">
+                    <br>
+                    <a href="#" title="Header" data-toggle="popover" data-placement="bottom" data-content="Content">7 days Replacement</a>
+                    </div>
+                    <div class="stickers">
+                    <img src="https://images-na.ssl-images-amazon.com/images/G/31/A2I-Convert/mobile/IconFarm/icon-amazon-delivered._CB485933725_.png" style="width: 50px;
+                    height: 50px; align: center;" alt="Home Delivered">
+                    <br>
+                    <a href="#" title="Header" data-toggle="popover" data-placement="bottom" data-content="Content">Home Delivered</a>
+                    </div>
+                    <div class="stickers">
+                    <img src="https://images-na.ssl-images-amazon.com/images/G/31/A2I-Convert/mobile/IconFarm/icon-warranty._CB485935626_.png" style="width: 50px;
+                    height: 50px; align: center;" alt="1 year warranty">
+                    <br>
+                    <a href="#" title="Header" data-toggle="popover" data-placement="bottom" data-content="Content">1 Year Warranty</a>
+                    </div>
+                    <div class="stickers">
+                    <img src="https://images-na.ssl-images-amazon.com/images/G/31/A2I-Convert/mobile/IconFarm/No_contact_delivery_final._CB432269791_.png" style="width: 50px;
+                    height: 50px; align: center;" alt="No Contact Delivery">
+                    <br>
+                    <a href="#" title="Header" data-toggle="popover" data-placement="bottom" data-content="Content">No Contact Delivery</a>
+                    </div>
+                </span>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <hr style="width: 700px;">
+                <h4 style="color: green;">In stock.</h4>
+                <ul>
+                    {% for feature in features %}
+                        <li>{{ feature.features }}</li>
+                    {% endfor %}
+                </ul>
                 </div>
-            </span>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <hr style="width: 700px;">
-            <h4 style="color: green;">In stock.</h4>
-            {% block features %}
-            {% endblock %}
-            </div>
-        </td>
+            </td>
         </tr>
     </table>
     <br>
@@ -89,13 +96,63 @@
     {% block related_product %}
     {% endblock %}
     <hr>
-    <h2 class="left" style="line-height: 1.5;">Product Information</h2>
+    <h2 class="left" style="line-height: 1.5; margin-top: 20px;">Product Information</h2>
     <div class="information">
-        {% block table %}
-        {% endblock %}
+        <table>
+            <tr>
+                <td>
+                    <h3 style="padding-left: 20px; margin-top: 0px">Product Details</h3>
+                    <hr style="width: 700px; margin-left: -5px;">
+                    <table class="technical">
+                        <tr>
+                            <td class="col1">Product Dimensions	</td>
+                            <td class="col2">{{ product_dimensions }}</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">Manufacturer</td>
+                            <td class="col2">{{ manufacturer }}</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">Country of Origin</td>
+                            <td class="col2">{{ origin }}</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">ASIN</td>
+                            <td class="col2">{{ asin }}</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">Customer Rating</td>
+                            <td class="col2">{{ average_customer_rating }}</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">Best Sellers Rank</td>
+                            <td class="col2">{{ best_sellers }}</td>
+                        </tr>
+                        <tr>
+                            <td class="col1">Date First Available</td>
+                            <td class="col2">{{ launch_date }}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <br>
+                    <br>
+                    <h3 style="margin-left: 100px; margin-top: -200px;">Feedback</h3>
+                    <hr style="width: 700px; margin-left: 100px;">
+                    <form style="margin-left: 100px;" action="mailto:swati100897@gmail.com" method="post" enctype="text/plain">
+                        <textarea placeholder="Any feedbacks or suggestions.." rows="4" cols="80"
+                            style="padding: 5px;"></textarea>
+                        <br />
+                        <input type="submit" />
+                    </form>
+                </td>
+            </tr>
+        </table>
     </div>
     <br>
     <br>
     <h2 class="left">Customer Reviews and Comments to be added here</h2>
+    {% block comments %}
+    {% endblock %}
     <script src="{% static 'Clothing/js/clothing.js' %}" charset="utf-8"></script>
 {% endblock %}

@@ -4,12 +4,13 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Shoptastic</title>
+  <title>{% block title %}{% endblock %}</title>
   <meta name="viewport" content="width=device-width , initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="{% static 'Dashboard/css/styles.css' %}">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
   {% block head_block %}
   {% endblock %}
 </head>
@@ -28,7 +29,7 @@
               <span class="icon-bar"></span>
             </button>
           </div>
-          <a class=" navbar-brand" href="#">
+          <a class=" navbar-brand" href="{% url 'Dashboard:index' %}">
             <h1 id="head">Shoptastic</h1>
           </a>
 
@@ -255,31 +256,19 @@
         <div class="col-sm-3">
           <h4 class="white">Get to Know Us</h4>
           <div class="gap">
-            <a class="grey foot" href="#">About Us</a>
-          </div>
-          <div class="gap">
-            <a class="grey foot" href="#">Careers</a>
-          </div>
-          <div class="gap">
-            <a class="grey foot" href="#">Press Release</a>
-          </div>
-          <div class="gap">
-            <a class="grey foot" href="#">Shoptastic cares</a>
-          </div>
-          <div class="gap">
-            <a class="grey foot" href="#">Gift a Smile</a>
+            <a class="grey foot" href="{% url 'Dashboard:about' %}">About Us</a>
           </div>
         </div>
         <div class="col-sm-3">
           <h4 class="white">Connect with Us</h4>
           <div class="gap">
-            <a class="grey foot" href="#">Facebook</a>
+            <a class="grey foot" href="https://www.facebook.com/">Facebook</a>
           </div>
           <div class="gap">
-            <a class="grey foot" href="#">Twitter</a>
+            <a class="grey foot" href="https://twitter.com/login">Twitter</a>
           </div>
           <div class="gap">
-            <a class="grey foot" href="#">Instagram</a>
+            <a class="grey foot" href="https://www.instagram.com/accounts/login/">Instagram</a>
           </div>
         </div>
         <div class="col-sm-3">

@@ -94,72 +94,131 @@
     </div>
 {% endblock %}
 
-{% block features %}
-    <ul>
-        <li>SIZE: 90cm, Fits for AGE: 12-18 months</li>
-        <li>MATERIAL:Soft Flannel</li>
-        <li>Good Ideal For Spring & Autumn & Winter usage</li>
-        <li>RECOMMEND:Cuddly Animal Design,Not Only Fit For Daily Dress, But Also Is a Great Gift For Festivals Such as Birthdays, Christmas, Cosplay Party.</li>
-        <li>INSTRUCTIONS: Hand Washing & Machine Washing, Zipper For Easy Diaper Change, The Mission Is To Help Baby Play and Sleep Comfortably.Better To Wash First Before Wear, As Baby Skin Is Quiet Sensitive.</li>
-        <li>PS: Socks Not Included</li>
-    </ul>
-{% endblock %}
-
-{% block table %}
-    <table>
-        <tr>
-            <td>
-                <h3 style="padding-left: 20px;">Product Details</h3>
-                <hr style="width: 700px; margin-left: -5px;">
-                <table class="technical">
-                    <tr>
-                        <td class="col1">Product Dimensions</td>
-                        <td class="col2">29.5 x 28 x 11.6 cm; 350 Grams</td>
-                    </tr>
-                    <tr>
-                        <td class="col1">Date First Available</td>
-                        <td class="col2">24 March 2019</td>
-                    </tr>
-                    <tr>
-                        <td class="col1">Manufacturer</td>
-                        <td class="col2">Taslar</td>
-                    </tr>
-                    <tr>
-                        <td class="col1">ASIN</td>
-                        <td class="col2">B07PQS98D6</td>
-                    </tr>
-                    <tr>
-                        <td class="col1">Country of Origin</td>
-                        <td class="col2">China</td>
-                    </tr>
-                    <tr>
-                        <td class="col1">Department</td>
-                        <td class="col2">Unisex</td>
-                    </tr>
-                    <tr>
-                        <td class="col1">Item Weight</td>
-                        <td class="col2">350 g</td>
-                    </tr>
-                    <tr>
-                        <td class="col1">Amazon Bestseller Rank</td>
-                        <td class="col2">#23,262 in Clothing & Accessories (See Top 100 in Clothing & Accessories)
-                            #691 in Baby Boys' Clothing</td>
-                    </tr>
-                    <tr>
-                        <td class="col1">Customer Ratings</td>
-                        <td class="col2">4.3 out of 5 stars</td>
-                    </tr>
-                </table>
-            </td>
-            <td>
-                <h3 style="margin-left: 100px; padding-left: 20px; margin-top: -200px">Feedback</h3>
-                <hr style="margin-left: 100px; width: 700px;">
-                <form style="margin-left: 100px;" action="mailto:swati100897@gmail.com" method="post" enctype="text/plain">
-                    <textarea placeholder="Any feedbacks or suggestions.." rows="4" cols="80" style="padding: 5px;"></textarea>
-                    <br />
-                    <input type="submit" />
-                </form>
-            </td>
-        </tr>
-    </table>
+{% block comments %}
+<table>
+    <tr>
+        <!-- Customer Reviews Rating, Rating by Feature, Post your Review -->
+        <td>
+            <table>
+                <!-- Customer Reviews Rating -->
+                <tr>
+                    <!-- Show previous ratings - pass width from views.py as 
+                        (20 * 5 + 10 * 4 + 40 * 3 + 5 * 2 + 25 * 1) / 100
+                        where out of 100 ratings, 20 people gave 5 stars, 10 people gave 4 stars, 40 people gave 3 stars,
+                        5 people gave 2 stars, and 25 people gave 1 star
+                        Now final rating = sum of rating / total rating
+                        width percentage = final rating * 100 / 5 (because it is a 5 scale rating)
+                    -->
+                    <div class="left">
+                        <h3 class="left">Customer Reviews</h3>
+                        <div class="star-ratings-sprite">
+                            <span style="width:52%" class="star-ratings-sprite-rating"></span>
+                        </div>
+                        <h4 style="float: left; padding-left: 20px; margin-top: 5px;">{{ final_rating }} out of 5</h4>
+                        <br>
+                        <h5 style="float: left; margin-left: 100px">{{ total_ratings }} global ratings</h5>
+                        <br>
+                        <div style="float: left;" class="left charts">
+                            <div class="chart chart--dev">
+                              <ul class="chart--horiz">
+                                <li class="chart__bar" style="width: 98%;">
+                                  <span class="chart__label">
+                                    5 star
+                                  </span>
+                                </li>
+                                <li class="chart__bar" style="width: 98%;">
+                                  <span class="chart__label">
+                                    4 star
+                                  </span>
+                                </li>
+                                <li class="chart__bar" style="width: 70%;">
+                                  <span class="chart__label">
+                                    3 star
+                                  </span>
+                                </li>
+                                <li class="chart__bar" style="width: 60%;">
+                                  <span class="chart__label">
+                                    2 star
+                                  </span>
+                                </li>
+                                <li class="chart__bar" style="width: 25%;">
+                                  <span class="chart__label">
+                                    1 star
+                                  </span>
+                                </li>
+                              </ul>
+                            </div>
+                        </div>
+                    </div>
+                </tr>
+                <!-- Post your Review and Rating -->
+                <tr>
+                    <div class="left">
+                        <h3 class="left" style="float: left;">Post your Rating and Review</h3>
+                        <br>
+                        <!-- Get rating input from user -->
+                        <div class="rating rating2" style="margin-left: -20%;">
+                            <a href="#5" title="Give 5 stars">★</a>
+                            <a href="#4" title="Give 4 stars">★</a>
+                            <a href="#3" title="Give 3 stars">★</a>
+                            <a href="#2" title="Give 2 stars">★</a>
+                            <a href="#1" title="Give 1 star">★</a>
+                        </div>
+                        <textarea name="comment" placeholder="Share your thoughts with other customers..." class="inpbox"></textarea>
+                    </div>
+                </tr>
+            </table>
+        </td>
+        <!-- Previous Comments on the product -->
+        <td class="comments">
+            <h3><strong>Top Reviews</strong></h3>
+            <div class="reviews">
+                <div>
+                    <h4><i class="fas fa-user-circle" style="size: 25x; color: gray;"></i>&nbsp;&nbsp;Swati</h4>
+                    <div class="star-ratings-sprite" style="margin-left: 10px;">
+                        <span style="width:90%" class="star-ratings-sprite-rating"></span>
+                    </div>
+                    <br>
+                    <br>
+                    <strong>Awesome phone</strong>
+                    <p style="color: gray;">Reviewed in India on 13th May 2021</p>
+                    <p>Battery life is very good, but very expensive</p>
+                </div>
+                <div>
+                    <h4><i class="fas fa-user-circle" style="size: 25x; color: gray;"></i>&nbsp;&nbsp;Pulkit</h4>
+                    <div class="star-ratings-sprite" style="margin-left: 10px;">
+                        <span style="width:20%" class="star-ratings-sprite-rating"></span>
+                    </div>
+                    <br>
+                    <br>
+                    <strong>Worst phone</strong>
+                    <p style="color: gray;">Reviewed in India on 13th May 2021</p>
+                    <p>Worst phone, overheats a lot</p>
+                </div>
+                <div>
+                    <h4><i class="fas fa-user-circle" style="size: 25x; color: gray;"></i>&nbsp;&nbsp;Aqib</h4>
+                    <div class="star-ratings-sprite" style="margin-left: 10px;">
+                        <span style="width:50%" class="star-ratings-sprite-rating"></span>
+                    </div>
+                    <br>
+                    <br>
+                    <strong>Average phone</strong>
+                    <p style="color: gray;">Reviewed in India on 13th May 2021</p>
+                    <p>Average phone, can buy</p>
+                </div>
+                <div>
+                    <h4><i class="fas fa-user-circle" style="size: 25x; color: gray;"></i>&nbsp;&nbsp;Demo</h4>
+                    <div class="star-ratings-sprite" style="margin-left: 10px;">
+                        <span style="width:80%" class="star-ratings-sprite-rating"></span>
+                    </div>
+                    <br>
+                    <br>
+                    <strong>Good</strong>
+                    <p style="color: gray;">Reviewed in India on 13th May 2021</p>
+                    <p>Expensive, but good</p>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
 {% endblock %}

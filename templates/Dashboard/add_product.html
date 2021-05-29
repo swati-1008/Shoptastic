@@ -1,0 +1,17 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+{% block title %}
+    Shoptastic - Add Product
+{% endblock%}
+
+{% block head_block %}
+<link rel="stylesheet" href="{% static 'Dashboard/css/product.css' %}">   
+{% endblock %}
+
+{% block body_block %}
+    <form method="POST" style="margin-top: 10em; margin-left: 30px;">
+        {% csrf_token %}
+        {{ mobile_form.as_p }}
+    </form>
+{% endblock %}

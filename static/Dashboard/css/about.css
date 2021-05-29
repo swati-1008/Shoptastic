@@ -1,0 +1,167 @@
+
+
+.about {
+  margin-top: 10em;
+  margin-left: 30px;
+}
+
+.content {
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 2%;
+}
+
+.content h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.content p {
+    color: #6f7782;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+td {
+  padding: 50px;
+}
+
+table {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.image {
+  border-radius: 50%;
+  width: 250px;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:400,700&display=swap");
+
+ol {
+    visibility: visible !important;
+}
+
+ol li {
+    visibility: visible !important;
+}
+
+.list--wrapper {
+    position: relative;
+    margin: auto 2em;
+    max-width: 1140px;
+}
+
+.list--title {
+    margin: 50px 0 25px;
+    padding-bottom: 5px;
+    font-size: 20px;
+    font-weight: 700;
+    border-bottom: 2px solid;
+}
+
+.list {
+  font-family: "Roboto", sans-serif;
+  counter-reset: list;
+  list-style: none;
+}
+
+.list--item {
+  counter-increment: list;
+  position: relative;
+  padding-left: 1.4em;
+}
+
+.list--item::before {
+  content: counter(list);
+  position: absolute;
+  left: 0;
+  font-size: 0.4em;
+  font-weight: 700;
+  line-height: 2em;
+  text-align: center;
+}
+
+.list--link {
+  color: inherit;
+}
+
+.list--link__header {
+  font-size: 0.7em;
+}
+
+.list--link__description {
+  max-width: 650px;
+  margin: 0 0 25px;
+  padding: 10px 13px;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  font-family: "Roboto Mono", monospace;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: white;
+}
+
+@media (min-width: 575px) {
+  .list--item {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 767px) {
+  .list--item {
+    font-size: 32px;
+  }
+}
+
+@media (min-width: 991px) {
+  .list--item {
+    font-size: 34px;
+    margin-bottom: 20px;
+  }
+  .list--link__header {
+    padding-right: 20px;
+  }
+
+  .list--link__header span {
+    position: relative;
+    padding: 0 10px 0 0;
+  }
+  .list--link__header span::after {
+    display: none;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: calc(800px - 100%);
+    border-bottom: 1px solid;
+  }
+  .list--link:hover .list--link__header span::after,
+  .list--link:focus .list--link__header span::after{
+    display: block;
+  }
+  .list--link__description {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 500px;
+    transform: translate3d(0, -50%, 0);
+    max-width: calc(100% - 500px);
+    padding: 10px 13px;
+    border: 1px solid;
+    z-index: 2;
+  }
+  .list--link:hover .list--link__description,
+  .list--link:focus .list--link__description {
+    display: block;
+  }
+}
+
+@media (min-width: 1199px) {
+  .list--item {
+    font-size: 36px;
+  }
+}

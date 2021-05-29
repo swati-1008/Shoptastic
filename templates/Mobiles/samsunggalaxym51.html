@@ -94,124 +94,136 @@
     </div>
 {% endblock %}
 
-{% block features %}
-    <li>Quad camera setup - 64MP (F1.8) main camera + 12MP (F2.2) ultra wide camera + 5MP (F2.4) depth camera + 5MP (F2.4) macro camera and 32MP (F2.2) front camera</li>
-    <li>16.95 cm (6.7-inch) sAMOLED Plus - Infinity-O display, FHD+ capacitive touchscreen with 1080 x 2400 pixels resolution, Contrast Ratio: 78960:1</li>
-    <li>Memory, Storage & SIM: 6GB RAM, 128GB internal memory expandable up to 512GB | Dedicated Memory slot</li>
-    <li>Android v10.0 operating system with 2.2GHz+1.8GHz Qualcomm | SD730G octa core processor</li>
-    <li>7000mAH lithium-ion battery | 25W USB Type-C to C fast charger in the box</li>
-    <li>Fast face unlock and Side Fingerprint sensor | Dual SIM (nano+nano) with dual standby and dual VoLTE | 3.5 mm headphone jack</li>
-    <li>1 year manufacturer warranty for device and 6 months manufacturer warranty for in-box accessories including batteries from the date of purchase</li>
-    <li>Box also includes: Travel adapter, USB Type-C to C, ejection pin and user manual</li>
+{% block additional %}
+    <h3 style="margin-left: 100px; padding-left: 20px; margin-top: -110px;">Additional Information</h3>
+    <hr style="margin-left: 100px; width: 700px;">
 {% endblock %}
 
-{% block table %}
-    <table>
-        <tr>
+{% block comments %}
+<table>
+    <tr>
+        <!-- Customer Reviews Rating, Rating by Feature, Post your Review -->
         <td>
-            <h3 style="padding-left: 20px;">Technical Details</h3>
-            <hr style="width: 700px; margin-left: -5px;">
-            <table class="technical">
-            <tr>
-                <td class="col1">OS</td>
-                <td class="col2">Android</td>
-            </tr>
-            <tr>
-                <td class="col1">RAM</td>
-                <td class="col2">6 GB</td>
-            </tr>
-            <tr>
-                <td class="col1">Product Dimensions</td>
-                <td class="col2">16.9 x 0.9 x 7.6 cm; 213 Grams</td>
-            </tr>
-            <tr>
-                <td class="col1">Batteries</td>
-                <td class="col2">1 Lithium ion batteries required. (included)</td>
-            </tr>
-            <tr>
-                <td class="col1">Item Model Number</td>
-                <td class="col2">SM-M515FZBDINS</td>
-            </tr>
-            <tr>
-                <td class="col1">Wireless Communication Technologies</td>
-                <td class="col2">Bluetooth, WiFi Hotspot</td>
-            </tr>
-            <tr>
-                <td class="col1">Special Features</td>
-                <td class="col2">Dimensions: 16.95x 0.95x7.63 - Other display features: 20:9 aspect ratio, Corning Gorilla Glass 3 - Other Camera Features: Single Take (Rear and Front), Camera, Single Take (Rear and Front) Dimensions: 16.95x 0.95x7.63 - Other display features: 20:9 aspect ratio, Corning Gorilla Glass 3</td>
-            </tr>
-            <tr>
-                <td class="col1">Other Display Features</td>
-                <td class="col2">Wireless</td>
-            </tr>
-            <tr>
-                <td class="col1">Other Camera Features</td>
-                <td class="col2">64 MP + 12MP + 5MP + 5MP</td>
-            </tr>
-            <tr>
-                <td class="col1">Form Factor</td>
-                <td class="col2">Touch Screen Phone</td>
-            </tr>
-            <tr>
-                <td class="col1">Colour</td>
-                <td class="col2">Electric Blue</td>
-            </tr>
-            <tr>
-                <td class="col1">Battery Power Rating</td>
-                <td class="col2">7000</td>
-            </tr>
-            <tr>
-                <td class="col1">Manufacturer</td>
-                <td class="col2">Samsung India Electronics Private Limited</td>
-            </tr>
-            <tr>
-                <td class="col1">Country of Origin</td>
-                <td class="col2">India</td>
-            </tr>
+            <table>
+                <!-- Customer Reviews Rating -->
+                <tr>
+                    <!-- Show previous ratings - pass width from views.py as 
+                        (20 * 5 + 10 * 4 + 40 * 3 + 5 * 2 + 25 * 1) / 100
+                        where out of 100 ratings, 20 people gave 5 stars, 10 people gave 4 stars, 40 people gave 3 stars,
+                        5 people gave 2 stars, and 25 people gave 1 star
+                        Now final rating = sum of rating / total rating
+                        width percentage = final rating * 100 / 5 (because it is a 5 scale rating)
+                    -->
+                    <div class="left">
+                        <h3 class="left">Customer Reviews</h3>
+                        <div class="star-ratings-sprite">
+                            <span style="width:52%" class="star-ratings-sprite-rating"></span>
+                        </div>
+                        <h4 style="float: left; padding-left: 20px; margin-top: 5px;">{{ final_rating }} out of 5</h4>
+                        <br>
+                        <h5 style="float: left; margin-left: 100px">{{ total_ratings }} global ratings</h5>
+                        <br>
+                        <div style="float: left;" class="left charts">
+                            <div class="chart chart--dev">
+                              <ul class="chart--horiz">
+                                <li class="chart__bar" style="width: 98%;">
+                                  <span class="chart__label">
+                                    5 star
+                                  </span>
+                                </li>
+                                <li class="chart__bar" style="width: 98%;">
+                                  <span class="chart__label">
+                                    4 star
+                                  </span>
+                                </li>
+                                <li class="chart__bar" style="width: 70%;">
+                                  <span class="chart__label">
+                                    3 star
+                                  </span>
+                                </li>
+                                <li class="chart__bar" style="width: 60%;">
+                                  <span class="chart__label">
+                                    2 star
+                                  </span>
+                                </li>
+                                <li class="chart__bar" style="width: 25%;">
+                                  <span class="chart__label">
+                                    1 star
+                                  </span>
+                                </li>
+                              </ul>
+                            </div>
+                        </div>
+                    </div>
+                </tr>
+                <!-- Post your Review and Rating -->
+                <tr>
+                    <div class="left">
+                        <h3 class="left" style="float: left;">Post your Rating and Review</h3>
+                        <br>
+                        <!-- Get rating input from user -->
+                        <div class="rating rating2" style="margin-left: -20%;">
+                            <a href="#5" title="Give 5 stars">★</a>
+                            <a href="#4" title="Give 4 stars">★</a>
+                            <a href="#3" title="Give 3 stars">★</a>
+                            <a href="#2" title="Give 2 stars">★</a>
+                            <a href="#1" title="Give 1 star">★</a>
+                        </div>
+                        <textarea name="comment" placeholder="Share your thoughts with other customers..." class="inpbox"></textarea>
+                    </div>
+                </tr>
             </table>
         </td>
-        <td>
-            <h3 style="margin-left: 100px; padding-left: 20px; margin-top: -110px;">Additional Information</h3>
-            <hr style="margin-left: 100px; width: 700px;">
-            <table class="technical" style="margin-left: 100px;">
-            <tr>
-                <td class="col1">ASIN</td>
-                <td class="col2">B085J1J32G</td>
-            </tr>
-            <tr>
-                <td class="col1">Customer Reviews</td>
-                <td class="col2">4.4 out of 5 stars</td>
-            </tr>
-            <tr>
-                <td class="col1">Best Sellers Rank</td>
-                <td class="col2">#135 in Electronics (See Top 100 in Electronics)
-                <br>
-                #49 in Smartphones
-                </td>
-            </tr>
-            <tr>
-                <td class="col1">Date First Available</td>
-                <td class="col2">18 September 2020</td>
-            </tr>
-            <tr>
-                <td class="col1">Manufacturer</td>
-                <td class="col2">Samsung India Electronics Private Limited, Samsung India Electronics Pvt ltd, 6th Floor , DLF Centre, Sansad Marg, New Delhi - 110001 . Email id: support.india@samsung.com, Tel(Toll Free): 1800 40 7267864</td>
-            </tr>
-            <tr>
-                <td class="col1">Generic Name</td>
-                <td class="col2">Smartphones</td>
-            </tr>
-            </table>
-            <br>
-            <br>
-            <h3 style="margin-left: 100px;">Feedback</h3>
-            <hr style="width: 700px; margin-left: 100px;">
-            <form style="margin-left: 100px;" action="mailto:swati100897@gmail.com" method="post" enctype="text/plain">
-            <textarea placeholder="Any feedbacks or suggestions.." rows="4" cols="80" style="padding: 5px;"></textarea>
-            <br />
-            <input type="submit" />
-            </form>
+        <!-- Previous Comments on the product -->
+        <td class="comments">
+            <h3><strong>Top Reviews</strong></h3>
+            <div class="reviews">
+                <div>
+                    <h4><i class="fas fa-user-circle" style="size: 25x; color: gray;"></i>&nbsp;&nbsp;Swati</h4>
+                    <div class="star-ratings-sprite" style="margin-left: 10px;">
+                        <span style="width:90%" class="star-ratings-sprite-rating"></span>
+                    </div>
+                    <br>
+                    <br>
+                    <strong>Awesome phone</strong>
+                    <p style="color: gray;">Reviewed in India on 13th May 2021</p>
+                    <p>Battery life is very good, but very expensive</p>
+                </div>
+                <div>
+                    <h4><i class="fas fa-user-circle" style="size: 25x; color: gray;"></i>&nbsp;&nbsp;Pulkit</h4>
+                    <div class="star-ratings-sprite" style="margin-left: 10px;">
+                        <span style="width:20%" class="star-ratings-sprite-rating"></span>
+                    </div>
+                    <br>
+                    <br>
+                    <strong>Worst phone</strong>
+                    <p style="color: gray;">Reviewed in India on 13th May 2021</p>
+                    <p>Worst phone, overheats a lot</p>
+                </div>
+                <div>
+                    <h4><i class="fas fa-user-circle" style="size: 25x; color: gray;"></i>&nbsp;&nbsp;Aqib</h4>
+                    <div class="star-ratings-sprite" style="margin-left: 10px;">
+                        <span style="width:50%" class="star-ratings-sprite-rating"></span>
+                    </div>
+                    <br>
+                    <br>
+                    <strong>Average phone</strong>
+                    <p style="color: gray;">Reviewed in India on 13th May 2021</p>
+                    <p>Average phone, can buy</p>
+                </div>
+                <div>
+                    <h4><i class="fas fa-user-circle" style="size: 25x; color: gray;"></i>&nbsp;&nbsp;Demo</h4>
+                    <div class="star-ratings-sprite" style="margin-left: 10px;">
+                        <span style="width:80%" class="star-ratings-sprite-rating"></span>
+                    </div>
+                    <br>
+                    <br>
+                    <strong>Good</strong>
+                    <p style="color: gray;">Reviewed in India on 13th May 2021</p>
+                    <p>Expensive, but good</p>
+                </div>
+            </div>
         </td>
-        </tr>
-    </table>
+    </tr>
+</table>
 {% endblock %}

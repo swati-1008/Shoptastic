@@ -1,0 +1,122 @@
+/* #id_product_id {
+    background-color: red;
+    color: green;
+} */
+
+#id_product_id {
+    margin-left: 113px;
+}
+
+#id_product_name {
+    margin-left: 89px;
+}
+
+#id_product_desc {
+    margin-left: 93px;
+}
+
+#id_price {
+    margin-left: 148px;
+}
+
+#id_colour {
+    margin-left: 137px;
+}
+
+#id_image1 {
+    margin-left: 193px;
+}
+
+#id_image2 {
+    margin-left: 193px;
+}
+
+#id_image3 {
+    margin-left: 193px;
+}
+
+#id_image4 {
+    margin-left: 193px;
+}
+
+#id_image5 {
+    margin-left: 193px;
+}
+
+#id_os {
+    margin-left: 166px;
+}
+
+#id_ram {
+    margin-left: 155px;
+}
+
+#id_product_dimensions {
+    margin-left: 50px;
+}
+
+#id_batteries {
+    margin-left: 125px;
+}
+
+#id_item_model_number {
+    margin-left: 55px;
+}
+
+#id_wireless {
+    margin-left: 128px;
+}
+
+#id_special {
+    margin-left: 135px;
+}
+
+#id_display {
+    margin-left: 136px;
+}
+
+#id_camera {
+    margin-left: 135px;
+}
+
+#id_form_factor {
+    margin-left: 108px;
+}
+
+#id_battery_power {
+    margin-left: 92px;
+}
+
+#id_manufacturer {
+    margin-left: 97px;
+}
+
+#id_origin {
+    margin-left: 144px;
+}
+
+#id_asin {
+    margin-left: 154px;
+}
+
+#id_average_customer_rating {
+    margin-left: 20px;
+}
+
+#id_best_sellers {
+    margin-left: 104px;
+}
+
+#id_launch_date {
+    margin-left: 100px;
+}
+
+#id_manufacture_address {
+    margin-left: 42px;
+}
+
+#id_generic_name {
+    margin-left: 90px;
+}
+
+/* Run migrations and migrate */

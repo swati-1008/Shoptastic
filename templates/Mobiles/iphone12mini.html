@@ -94,117 +94,136 @@
     </div>
 {% endblock %}
 
-{% block features %}
-    <li>5.4-inch (13.7 cm diagonal) Super Retina XDR display</li>
-    <li>Ceramic Shield, tougher than any smartphone glass</li>
-    <li>A14 Bionic chip, the fastest chip ever in a smartphone</li>
-    <li>Advanced dual-camera system with 12MP Ultra Wide and Wide cameras; Night mode, Deep Fusion, Smart HDR 3, 4K Dolby Vision HDR recording</li>
-    <li>12MP TrueDepth front camera with Night mode, 4K Dolby Vision HDR recording</li>
-    <li>Industry-leading IP68 water resistance</li>
-    <li>Supports MagSafe accessories for easy attach and faster wireless charging</li>
-    <li>iOS with redesigned widgets on the Home screen, all-new App Library, App Clips and more</li>
+{% block additional %}
+    <h3 style="margin-left: 100px; padding-left: 20px; margin-top: -120px;">Additional Information</h3>
+    <hr style="margin-left: 100px; width: 700px;">
 {% endblock %}
 
-{% block table %}
-    <table>
-        <tr>
+{% block comments %}
+<table>
+    <tr>
+        <!-- Customer Reviews Rating, Rating by Feature, Post your Review -->
         <td>
-            <h3 style="padding-left: 20px;">Technical Details</h3>
-            <hr style="width: 700px; margin-left: -5px;">
-            <table class="technical">
-            <tr>
-                <td class="col1">Display</td>
-                <td class="col2">5.4-inch (13.7 cm diagonal) Super Retina XDR display with True Tone</td>
-            </tr>
-            <tr>
-                <td class="col1">Capacity</td>
-                <td class="col2">64GB, 128GB, 256GB</td>
-            </tr>
-            <tr>
-                <td class="col1">Splash, Water and Dust Resistant</td>
-                <td class="col2">All-glass and surgical-grade stainless steel design, water and dust resistant (rated IP68)</td>
-            </tr>
-            <tr>
-                <td class="col1">Camera and Video</td>
-                <td class="col2">Dual 12MP cameras with Portrait mode, Depth Control, Portrait Lighting, Smart HDR, and 4K Dolby Vision HDR video up to 60 fps</td>
-            </tr>
-            <tr>
-                <td class="col1">Front Camera</td>
-                <td class="col2">12MP TrueDepth front camera with Portrait mode, Depth Control, Portrait Lighting, and Smart HDR 3</td>
-            </tr>
-            <tr>
-                <td class="col1">Power and Battery</td>
-                <td class="col2">Video playback:Up to 15 hours, Video playback (streamed):Up to 10 hours, Audio playback:Up to 50 hours, 20W adapter or higher (sold separately), Fast-charge capable: Up to 50% charge in around 30 minutes with 20W adapter or higher</td>
-            </tr>
-            <tr>
-                <td class="col1">In the Box</td>
-                <td class="col2">IPhone with iOS 14, USB-C to Lightning Cable, Documentation</td>
-            </tr>
-            <tr>
-                <td class="col1">Warranty</td>
-                <td class="col2">Apple-branded hardware product and accessories contained in the original packaging (“Apple Product”) come with a One-Year Limited Warranty. See apple.com/in/legal/warranty for more information.</td>
-            </tr>
-            <tr>
-                <td class="col1">Height</td>
-                <td class="col2">5.18 inches (131.5 mm)</td>
-            </tr>
-            <tr>
-                <td class="col1">Width</td>
-                <td class="col2">2.53 inches (64.2 mm)</td>
-            </tr>
-            <tr>
-                <td class="col1">Depth</td>
-                <td class="col2">0.29 inch (7.4 mm)</td>
-            </tr>
-            <tr>
-                <td class="col1">Weight</td>
-                <td class="col2">4.76 ounces (135 grams)</td>
-            </tr>
-            <tr>
-                <td class="col1">Manufacturer</td>
-                <td class="col2">Apple Inc. or Apple India Private Limited</td>
-            </tr>
-            <tr>
-                <td class="col1">Country of Origin</td>
-                <td class="col2">China</td>
-            </tr>
-            <tr>
-                <td class="col1">Item Model Number</td>
-                <td class="col2">MGE23HN/A</td>
-            </tr>
+            <table>
+                <!-- Customer Reviews Rating -->
+                <tr>
+                    <!-- Show previous ratings - pass width from views.py as 
+                        (20 * 5 + 10 * 4 + 40 * 3 + 5 * 2 + 25 * 1) / 100
+                        where out of 100 ratings, 20 people gave 5 stars, 10 people gave 4 stars, 40 people gave 3 stars,
+                        5 people gave 2 stars, and 25 people gave 1 star
+                        Now final rating = sum of rating / total rating
+                        width percentage = final rating * 100 / 5 (because it is a 5 scale rating)
+                    -->
+                    <div class="left">
+                        <h3 class="left">Customer Reviews</h3>
+                        <div class="star-ratings-sprite">
+                            <span style="width:52%" class="star-ratings-sprite-rating"></span>
+                        </div>
+                        <h4 style="float: left; padding-left: 20px; margin-top: 5px;">{{ final_rating }} out of 5</h4>
+                        <br>
+                        <h5 style="float: left; margin-left: 100px">{{ total_ratings }} global ratings</h5>
+                        <br>
+                        <div style="float: left;" class="left charts">
+                            <div class="chart chart--dev">
+                              <ul class="chart--horiz">
+                                <li class="chart__bar" style="width: 98%;">
+                                  <span class="chart__label">
+                                    5 star
+                                  </span>
+                                </li>
+                                <li class="chart__bar" style="width: 98%;">
+                                  <span class="chart__label">
+                                    4 star
+                                  </span>
+                                </li>
+                                <li class="chart__bar" style="width: 70%;">
+                                  <span class="chart__label">
+                                    3 star
+                                  </span>
+                                </li>
+                                <li class="chart__bar" style="width: 60%;">
+                                  <span class="chart__label">
+                                    2 star
+                                  </span>
+                                </li>
+                                <li class="chart__bar" style="width: 25%;">
+                                  <span class="chart__label">
+                                    1 star
+                                  </span>
+                                </li>
+                              </ul>
+                            </div>
+                        </div>
+                    </div>
+                </tr>
+                <!-- Post your Review and Rating -->
+                <tr>
+                    <div class="left">
+                        <h3 class="left" style="float: left;">Post your Rating and Review</h3>
+                        <br>
+                        <!-- Get rating input from user -->
+                        <div class="rating rating2" style="margin-left: -20%;">
+                            <a href="#5" title="Give 5 stars">★</a>
+                            <a href="#4" title="Give 4 stars">★</a>
+                            <a href="#3" title="Give 3 stars">★</a>
+                            <a href="#2" title="Give 2 stars">★</a>
+                            <a href="#1" title="Give 1 star">★</a>
+                        </div>
+                        <textarea name="comment" placeholder="Share your thoughts with other customers..." class="inpbox"></textarea>
+                    </div>
+                </tr>
             </table>
         </td>
-        <td>
-            <h3 style="margin-left: 100px; padding-left: 20px; margin-top: -250px;">Additional Information</h3>
-            <hr style="margin-left: 100px; width: 700px;">
-            <table class="technical" style="margin-left: 100px;">
-            <tr>
-                <td class="col1">ASIN</td>
-                <td class="col2">B08L5TDRQC</td>
-            </tr>
-            <tr>
-                <td class="col1">Importer</td>
-                <td class="col2">Apple India Private Limited No.24, 19th floor, Concorde Tower C, UB City, Vittal Mallya Road, Bangalore - 560 001</td>
-            </tr>
-            <tr>
-                <td class="col1">Manufacturer</td>
-                <td class="col2">Apple Inc. or Apple India Private Limited, Apple Inc, One Apple Park Way, Cupertino, CA 95014, USA. or Apple India Private Limited No.24, 19th floor, Concorde Tower C, UB City, Vittal Mallya Road, Bangalore - 560 001</td>
-            </tr>
-            <tr>
-                <td class="col1">Generic Name</td>
-                <td class="col2">Iphone 12</td>
-            </tr>
-            </table>
-            <br>
-            <br>
-            <h3 style="margin-left: 100px;">Feedback</h3>
-            <hr style="width: 700px; margin-left: 100px;">
-            <form style="margin-left: 100px;" action="mailto:swati100897@gmail.com" method="post" enctype="text/plain">
-            <textarea placeholder="Any feedbacks or suggestions.." rows="4" cols="80" style="padding: 5px;"></textarea>
-            <br />
-            <input type="submit" />
-            </form>
+        <!-- Previous Comments on the product -->
+        <td class="comments">
+            <h3><strong>Top Reviews</strong></h3>
+            <div class="reviews">
+                <div>
+                    <h4><i class="fas fa-user-circle" style="size: 25x; color: gray;"></i>&nbsp;&nbsp;Swati</h4>
+                    <div class="star-ratings-sprite" style="margin-left: 10px;">
+                        <span style="width:90%" class="star-ratings-sprite-rating"></span>
+                    </div>
+                    <br>
+                    <br>
+                    <strong>Awesome phone</strong>
+                    <p style="color: gray;">Reviewed in India on 13th May 2021</p>
+                    <p>Battery life is very good, but very expensive</p>
+                </div>
+                <div>
+                    <h4><i class="fas fa-user-circle" style="size: 25x; color: gray;"></i>&nbsp;&nbsp;Pulkit</h4>
+                    <div class="star-ratings-sprite" style="margin-left: 10px;">
+                        <span style="width:20%" class="star-ratings-sprite-rating"></span>
+                    </div>
+                    <br>
+                    <br>
+                    <strong>Worst phone</strong>
+                    <p style="color: gray;">Reviewed in India on 13th May 2021</p>
+                    <p>Worst phone, overheats a lot</p>
+                </div>
+                <div>
+                    <h4><i class="fas fa-user-circle" style="size: 25x; color: gray;"></i>&nbsp;&nbsp;Aqib</h4>
+                    <div class="star-ratings-sprite" style="margin-left: 10px;">
+                        <span style="width:50%" class="star-ratings-sprite-rating"></span>
+                    </div>
+                    <br>
+                    <br>
+                    <strong>Average phone</strong>
+                    <p style="color: gray;">Reviewed in India on 13th May 2021</p>
+                    <p>Average phone, can buy</p>
+                </div>
+                <div>
+                    <h4><i class="fas fa-user-circle" style="size: 25x; color: gray;"></i>&nbsp;&nbsp;Demo</h4>
+                    <div class="star-ratings-sprite" style="margin-left: 10px;">
+                        <span style="width:80%" class="star-ratings-sprite-rating"></span>
+                    </div>
+                    <br>
+                    <br>
+                    <strong>Good</strong>
+                    <p style="color: gray;">Reviewed in India on 13th May 2021</p>
+                    <p>Expensive, but good</p>
+                </div>
+            </div>
         </td>
-        </tr>
-    </table>
+    </tr>
+</table>
 {% endblock %}

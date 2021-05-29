@@ -1,0 +1,103 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+{% block title %}
+    Shoptastic - About Us
+{% endblock%}
+
+{% block head_block %}
+<link rel="stylesheet" href="{% static 'Dashboard/css/about.css' %}">   
+{% endblock %}
+
+{% block body_block %}
+    <div class="about">
+        <div>
+            <div>
+                <!-- About us and Description -->
+                <div class="content">
+                    <h1><strong>About US</strong></h1>
+                    <p>Shoptastic is a B.Tech Final Year Project <br> presented by the students of NIT Srinagar, Computer Science Department, Batch 2017-2021. <br> It focuses on Comment Analysis using Deep Learning and Neural Network techniques</p>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="{% static 'images/dashboard/sample.jpeg' %}" alt="Sample Image" class="image">
+                                <h2>Swati Srivastava</h2>
+                                <h4>2017BCSE016</h4>
+                                <h4>Roll Number: 14</h4>
+                            </td>
+                            <td>
+                                <img src="{% static 'images/dashboard/sample.jpeg' %}" alt="Sample Image" class="image">
+                                <h2>Pulkit Gulati</h2>
+                                <h4>2017BCSE010</h4>
+                                <h4>Roll Number: 9</h4>
+                            </td>
+                            <td>
+                                <img src="{% static 'images/dashboard/sample.jpeg' %}" alt="Sample Image" class="image">
+                                <h2>Aqib Mughal</h2>
+                                <h4>2017BCSE008</h4>
+                                <h4>Roll Number: 7</h4>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="list--wrapper">
+            <h1 class="list--title">Technologies Used</h1>
+            <ol class="list">
+                <li class="list--item">
+                  <a href="javascript:void(0)" class="list--link">
+                    <h2 class="list--link__header"><span>Python</span></h2>
+                    <p class="list--link__description">Programming Language</p>
+                  </a>
+                </li>
+                <li class="list--item">
+                  <a href="javascript:void(0)" class="list--link">
+                    <h2 class="list--link__header"><span>Django</span></h2>
+                    <p class="list--link__description">Web Framework</p>
+                  </a>
+                </li>
+                <li class="list--item">
+                  <a href="javascript:void(0)" class="list--link">
+                    <h2 class="list--link__header"><span>SQL</span></h2>
+                    <p class="list--link__description">Database</p>
+                  </a>
+                </li>
+                <li class="list--item">
+                  <a href="javascript:void(0)" class="list--link">
+                    <h2 class="list--link__header"><span>Deep Learning</span></h2>
+                    <p class="list--link__description">for Comment Analysis</p>
+                  </a>
+                </li>
+                <li class="list--item">
+                  <a href="javascript:void(0)" class="list--link">
+                    <h2 class="list--link__header"><span>Neural Networks</span></h2>
+                    <p class="list--link__description">GNN and RNN</p>
+                  </a>
+                </li>
+                <li class="list--item">
+                  <a href="javascript:void(0)" class="list--link">
+                    <h2 class="list--link__header"><span>Cloud Computing</span></h2>
+                    <p class="list--link__description">AWS for hosting</p>
+                  </a>
+                </li>
+                <li class="list--item">
+                    <a href="javascript:void(0)" class="list--link">
+                      <h2 class="list--link__header"><span>Github</span></h2>
+                      <p class="list--link__description">Project Management</p>
+                    </a>
+                </li>
+                <li class="list--item">
+                    <a href="javascript:void(0)" class="list--link">
+                      <h2 class="list--link__header"><span>Cryptography</span></h2>
+                      <p class="list--link__description">Hashers to encrypt passwords</p>
+                    </a>
+                </li>
+              </ol>
+        </div>
+    </div>
+{% endblock %}

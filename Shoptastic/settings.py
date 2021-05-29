@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure--=p-%#4x2)s=pm11)*psym#bkz!($%8zvpwfl*7z)$pgf1jf=u
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ec2-18-224-45-72.us-east-2.compute.amazonaws.com', '127.0.0.1']
 
 
 # Application definition
@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'Register_Login',
     'Dashboard',
     'Mobiles',
-    'Furniture'
+    'Furniture',
+    'Clothing',
 ]
 
 MIDDLEWARE = [
@@ -83,7 +84,7 @@ WSGI_APPLICATION = 'Shoptastic.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': str(BASE_DIR / 'db.sqlite3'),
     }
 }
 
