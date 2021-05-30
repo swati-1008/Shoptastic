@@ -2,15 +2,22 @@ from django.shortcuts import render
 from .models import *
 from django.contrib.auth.models import User
 from datetime import date
+import tensorflow as tf
+import numpy as np
 
 # Create your views here.
 
 def oneplus(request):
     if request.method == "POST":
-        print(request.POST.get('comment'))
-        u = User.objects.get(username=request.user)
-        comment = Comments(pid='MOB1', uid=u.customer.uid, comment=request.POST.get('comment'), date=date.today())
-        comment.save()
+        # comment = request.POST.get('comment')
+        # new_model = tf.keras.models.load_model('Machine learning models/stack.tf')
+        # predictions = new_model.predict([comment])
+        # rating = np.argmax(predictions[0])
+        # print("Rating = " + rating)
+        # u = User.objects.get(username=request.user)
+        # comment = Comments(pid='MOB1', uid=u.customer.uid, comment=request.POST.get('comment'), date=date.today())
+        # comment.save()
+        pass
     comments = Comments.objects.filter(pid='MOB1')
     row = Mobiles.objects.get(product_id='MOB1')
     features = list(Features.objects.filter(pid=row))

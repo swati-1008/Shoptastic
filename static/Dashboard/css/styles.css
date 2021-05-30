@@ -269,3 +269,9 @@ footer {
 .pop {
   font-size: 0.8em;
 }
+
+.logo {
+  border-radius: 500px;
+  padding-top: 5%;
+  float: right;
+}
