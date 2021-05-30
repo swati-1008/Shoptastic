@@ -1,6 +1,11 @@
 {% extends 'Mobiles/base.html' %}
 {% load static %}
 
+{% block child_head %}
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+{% endblock %}
+
 {% block display_image %}
     <div id="nail0" class="carousel slide display" data-ride="carousel" data-interval="0">
         <!-- Carousel indicators -->
@@ -174,17 +179,17 @@
                         <h3 class="left" style="float: left;">Post your Rating and Review</h3>
                         <br>
                         <!-- Get rating input from user -->
+                        <div class="rating rating2" style="margin-left: -20%;" id="rating">
+                            <a href="#1" title="Give 1 stars">★</a>
+                            <a href="#2" title="Give 2 stars">★</a>
+                            <a href="#3" title="Give 3 stars">★</a>
+                            <a href="#4" title="Give 4 stars">★</a>
+                            <a href="#5" title="Give 5 star">★</a>
+                        </div>
                         <form method="POST">
                             {% csrf_token %}
-                            <div class="rating rating2" style="margin-left: -20%;">
-                                <a href="#5" title="Give 5 stars">★</a>
-                                <a href="#4" title="Give 4 stars">★</a>
-                                <a href="#3" title="Give 3 stars">★</a>
-                                <a href="#2" title="Give 2 stars">★</a>
-                                <a href="#1" title="Give 1 star">★</a>
-                            </div>
                             <textarea name="comment" placeholder="Share your thoughts with other customers..." class="inpbox" name="comment"></textarea>
-                            <input class="post" type="submit" value="Post">
+                            <input class="post" type="submit" value="POST">
                         </form>
                     </div>
                 </tr>
