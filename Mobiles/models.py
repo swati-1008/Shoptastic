@@ -46,5 +46,5 @@ class Comments(models.Model):
     # uid = models.ForeignKey(User, on_delete=models.CASCADE, to_field='username', related_name='mobiles_uid')
     uid = models.CharField(max_length=10)
     rating = models.FloatField(default=0)
-    comment = models.CharField(max_length=1000)
+    comment = models.CharField(max_length=1000, blank=True, null=True)
     date = models.DateTimeField()

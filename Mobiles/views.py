@@ -17,10 +17,17 @@ def oneplus(request):
         # u = User.objects.get(username=request.user)
         # comment = Comments(pid='MOB1', uid=u.customer.uid, comment=request.POST.get('comment'), date=date.today())
         # comment.save()
+        data = 0
+        cmt = ''
         if 'data' in request.POST:
             data = request.POST.get('data')
-            data = 5 - data + 1
+            data = 5 - int(data) + 1
             print(data)
+        # comment = request.POST.get('comment')
+        # print(comment)
+        cmt = request.POST.get('comment')
+        comment = Comments(pid = 'MOB1', uid = request.user, comment = cmt, rating = data, date = date.today())
+        comment.save()
     comments = Comments.objects.filter(pid='MOB1')
     row = Mobiles.objects.get(product_id='MOB1')
     features = list(Features.objects.filter(pid=row))
