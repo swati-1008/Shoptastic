@@ -4,30 +4,52 @@ from django.contrib.auth.models import User
 from datetime import date
 import tensorflow as tf
 import numpy as np
+from django.db.models import Count
 
 # Create your views here.
 
+new_model = tf.keras.models.load_model('Machine learning models/stack.tf')
+
 def oneplus(request):
     if request.method == "POST":
-        # comment = request.POST.get('comment')
         # new_model = tf.keras.models.load_model('Machine learning models/stack.tf')
-        # predictions = new_model.predict([comment])
-        # rating = np.argmax(predictions[0])
-        # print("Rating = " + rating)
-        # u = User.objects.get(username=request.user)
-        # comment = Comments(pid='MOB1', uid=u.customer.uid, comment=request.POST.get('comment'), date=date.today())
-        # comment.save()
         data = 0
         cmt = ''
         if 'data' in request.POST:
             data = request.POST.get('data')
             data = 5 - int(data) + 1
-            print(data)
-        # comment = request.POST.get('comment')
-        # print(comment)
         cmt = request.POST.get('comment')
+        if cmt:
+            predictions = new_model.predict([cmt])
+            rating = np.argmax(predictions[0])
+            print("Rating = " + rating)
         comment = Comments(pid = 'MOB1', uid = request.user, comment = cmt, rating = data, date = date.today())
         comment.save()
+    fieldname = 'rating'
+    rating_count = Comments.objects.values(fieldname).order_by(fieldname).annotate(the_count = Count(fieldname))
+    rate1 = 0
+    rate2 = 0
+    rate3 = 0
+    rate4 = 0
+    rate5 = 0
+
+
+    # Rate 1, 2, 3, 4, 5 below, store the number of ratings having 1, 2, 3, 4, 5 stars respectively. Set the width accordingly now and also the average and all
+
+
+
+    for i in rating_count:
+        # print(f'Rating = {i.get("rating")}, Count = {i.get("the_count")}')
+        if i.get("rating") == 1.0:
+            rate1 = i.get("the_count")
+        elif i.get("rating") == 2.0:
+            rate2 = i.get("the_count")
+        elif i.get("rating") == 3.0:
+            rate3 = i.get("the_count")
+        elif i.get("rating") == 4.0:
+            rate4 = i.get("the_count")
+        elif i.get("rating") == 5.0:
+            rate5 = i.get("the_count")
     comments = Comments.objects.filter(pid='MOB1')
     row = Mobiles.objects.get(product_id='MOB1')
     features = list(Features.objects.filter(pid=row))
