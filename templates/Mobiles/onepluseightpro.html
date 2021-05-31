@@ -134,9 +134,17 @@
                     <div class="left">
                         <h3 class="left">Customer Reviews</h3>
                         <div class="star-ratings-sprite">
-                            <span style="width:52%" class="star-ratings-sprite-rating"></span>
+                            <span style="width:{{ final_star }}%;" class="star-ratings-sprite-rating"></span>
                         </div>
                         <h4 style="float: left; padding-left: 20px; margin-top: 5px;">{{ final_rating }} out of 5</h4>
+                        <br>
+                        <div class="star-ratings-sprite">
+                            <span style="width:{{ model_star }}%;" class="star-ratings-sprite-rating"></span>
+                        </div>
+                        <h4 style="float: left; padding-left: 20px; margin-top: 5px;">{{ model_rating }} out of 5</h4>
+                        <br>
+                        <br>
+                        <h4 style="float: right; margin-top: 2px; margin-right: 20px;">from the Model</h4>
                         <br>
                         <h5 style="float: left; margin-left: 100px">{{ total_ratings }} global ratings</h5>
                         <br>

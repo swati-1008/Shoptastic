@@ -12,9 +12,7 @@ new_model = tf.keras.models.load_model('Machine learning models/stack.tf')
 
 def oneplus(request):
     if request.method == "POST":
-        # new_model = tf.keras.models.load_model('Machine learning models/stack.tf')
         data = 0
-        cmt = ''
         if 'data' in request.POST:
             data = request.POST.get('data')
             data = 5 - int(data) + 1
@@ -33,7 +31,6 @@ def oneplus(request):
     rate4 = 0
     rate5 = 0
     for i in rating_count:
-        # print(f'Rating = {i.get("rating")}, Count = {i.get("the_count")}')
         if i.get("rating") == 1.0:
             rate1 = i.get("the_count")
         elif i.get("rating") == 2.0:
@@ -46,12 +43,12 @@ def oneplus(request):
             rate5 = i.get("the_count")
     rating_sum = rate1 * 1 + rate2 * 2 + rate3 * 3 + rate4 * 4 + rate5 * 5
     final_rating = rating_sum / (rate1 + rate2 + rate3 + rate4 + rate5)
-    rating1 = (rate1 / (rate1 + rate2 + rate3 + rate4 + rate5)) * 100             # () * 100 / 5 = () * 20
+    rating1 = (rate1 / (rate1 + rate2 + rate3 + rate4 + rate5)) * 100
     rating2 = (rate2 / (rate1 + rate2 + rate3 + rate4 + rate5)) * 100
     rating3 = (rate3 / (rate1 + rate2 + rate3 + rate4 + rate5)) * 100
     rating4 = (rate4 / (rate1 + rate2 + rate3 + rate4 + rate5)) * 100
     rating5 = (rate5 / (rate1 + rate2 + rate3 + rate4 + rate5)) * 100
-    print(f'Rating1 = {rating1}, Rating2 = {rating2}, Rating3 = {rating3}, Rating4 = {rating4}, Rating5 = {rating5}')
+    final_star = final_rating * 20                          # () * 100 / 5 = () * 20
     comments = Comments.objects.filter(pid='MOB1')
     row = Mobiles.objects.get(product_id='MOB1')
     features = list(Features.objects.filter(pid=row))
@@ -93,6 +90,7 @@ def oneplus(request):
         'rating3': rating3,
         'rating4': rating2,
         'rating5': rating1,
+        'final_star': final_star,
     }
     return render(request, 'Mobiles/onepluseightpro.html', context=context)
 
