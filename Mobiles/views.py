@@ -32,12 +32,6 @@ def oneplus(request):
     rate3 = 0
     rate4 = 0
     rate5 = 0
-
-
-    # Rate 1, 2, 3, 4, 5 below, store the number of ratings having 1, 2, 3, 4, 5 stars respectively. Set the width accordingly now and also the average and all
-
-
-
     for i in rating_count:
         # print(f'Rating = {i.get("rating")}, Count = {i.get("the_count")}')
         if i.get("rating") == 1.0:
@@ -50,6 +44,14 @@ def oneplus(request):
             rate4 = i.get("the_count")
         elif i.get("rating") == 5.0:
             rate5 = i.get("the_count")
+    rating_sum = rate1 * 1 + rate2 * 2 + rate3 * 3 + rate4 * 4 + rate5 * 5
+    final_rating = rating_sum / (rate1 + rate2 + rate3 + rate4 + rate5)
+    rating1 = (rate1 / (rate1 + rate2 + rate3 + rate4 + rate5)) * 100             # () * 100 / 5 = () * 20
+    rating2 = (rate2 / (rate1 + rate2 + rate3 + rate4 + rate5)) * 100
+    rating3 = (rate3 / (rate1 + rate2 + rate3 + rate4 + rate5)) * 100
+    rating4 = (rate4 / (rate1 + rate2 + rate3 + rate4 + rate5)) * 100
+    rating5 = (rate5 / (rate1 + rate2 + rate3 + rate4 + rate5)) * 100
+    print(f'Rating1 = {rating1}, Rating2 = {rating2}, Rating3 = {rating3}, Rating4 = {rating4}, Rating5 = {rating5}')
     comments = Comments.objects.filter(pid='MOB1')
     row = Mobiles.objects.get(product_id='MOB1')
     features = list(Features.objects.filter(pid=row))
@@ -83,7 +85,14 @@ def oneplus(request):
         'manufacture_address': row.manufacture_address,
         'generic_name': row.generic_name,
         'features': features,
-        'comments': comments
+        'comments': comments,
+        'final_rating': final_rating,
+        'total_ratings': rate1 + rate2 + rate3 + rate4 + rate5,
+        'rating1': rating5,
+        'rating2': rating4,
+        'rating3': rating3,
+        'rating4': rating2,
+        'rating5': rating1,
     }
     return render(request, 'Mobiles/onepluseightpro.html', context=context)
 
