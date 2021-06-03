@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from Mobiles.forms import *
 
 # Create your views here.
 

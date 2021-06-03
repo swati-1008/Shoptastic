@@ -21,8 +21,8 @@ class Mobiles(models.Model):
     product_dimensions = models.CharField(max_length=50)
     batteries = models.CharField(max_length=100)
     item_model_number = models.CharField(max_length=10)
-    wireless = models.CharField(max_length=1000)
-    special = models.CharField(max_length=1000)
+    wireless_features = models.CharField(max_length=1000)
+    special_features = models.CharField(max_length=1000)
     display = models.CharField(max_length=1000)
     camera = models.CharField(max_length = 200)
     form_factor = models.CharField(max_length=100)
@@ -35,6 +35,7 @@ class Mobiles(models.Model):
     launch_date = models.CharField(max_length=50)
     manufacture_address = models.CharField(max_length=200)
     generic_name = models.CharField(max_length=20)
+    model_rating = models.FloatField(default=0)
 
 class Features(models.Model):
     pid = models.ForeignKey(Mobiles, on_delete=models.CASCADE, to_field='product_id')
@@ -46,6 +47,5 @@ class Comments(models.Model):
     # uid = models.ForeignKey(User, on_delete=models.CASCADE, to_field='username', related_name='mobiles_uid')
     uid = models.CharField(max_length=10)
     rating = models.FloatField(default=0)
-    model_rating = models.FloatField(default=0)
     comment = models.CharField(max_length=1000, blank=True, null=True)
     date = models.DateTimeField()

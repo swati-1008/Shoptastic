@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'Mobiles',
     'Furniture',
     'Clothing',
+    'mathfilters',
 ]
 
 MIDDLEWARE = [
