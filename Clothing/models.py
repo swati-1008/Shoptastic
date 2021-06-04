@@ -22,14 +22,17 @@ class Clothing(models.Model):
     weight = models.CharField(max_length=20)
     average_customer_rating = models.FloatField(default=0)
     best_sellers = models.CharField(max_length=200, blank=True)
+    model_rating = models.FloatField(default=0)
 
 class Features(models.Model):
     pid = models.ForeignKey(Clothing, on_delete=models.CASCADE, to_field='product_id')
     features = models.CharField(max_length=500)
 
 class Comments(models.Model):
-    pid = models.ForeignKey(Clothing, on_delete=models.CASCADE, to_field='product_id')
-    uid = models.ForeignKey(User, on_delete=models.CASCADE, to_field='username', related_name='clothing_uid')
+    # pid = models.ForeignKey(Clothing, on_delete=models.CASCADE, to_field='product_id')
+    pid = models.CharField(max_length=10)
+    # uid = models.ForeignKey(User, on_delete=models.CASCADE, to_field='username', related_name='clothing_uid')
+    uid = models.CharField(max_length=10)
     rating = models.FloatField(default=0)
-    comment = models.CharField(max_length=1000)
+    comment = models.CharField(max_length=1000, blank=True, null=True)
     date = models.DateTimeField()

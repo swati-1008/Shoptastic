@@ -25,6 +25,7 @@ class Furniture(models.Model):
     average_customer_rating = models.FloatField(default=0)
     best_sellers = models.CharField(max_length=200, blank=True)
     launch_date = models.CharField(max_length=50)
+    model_rating = models.FloatField(default=0)
 
 class Features(models.Model):
     pid = models.ForeignKey(Furniture, on_delete=models.CASCADE, to_field='product_id')
@@ -35,8 +36,10 @@ class Features(models.Model):
     assembly_required = models.CharField(max_length=200)
 
 class Comments(models.Model):
-    pid = models.ForeignKey(Furniture, on_delete=models.CASCADE, to_field='product_id')
-    uid = models.ForeignKey(User, on_delete=models.CASCADE, to_field='username', related_name='furniture_uid')
+    # pid = models.ForeignKey(Furniture, on_delete=models.CASCADE, to_field='product_id')
+    pid = models.CharField(max_length=10)
+    # uid = models.ForeignKey(User, on_delete=models.CASCADE, to_field='username', related_name='furniture_uid')
+    uid = models.CharField(max_length=10)
     rating = models.FloatField(default=0)
-    comment = models.CharField(max_length=1000)
+    comment = models.CharField(max_length=1000, blank=True, null=True)
     date = models.DateTimeField()
