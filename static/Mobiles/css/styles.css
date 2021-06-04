@@ -224,7 +224,7 @@ button.sub:hover {
 }
 
 .comments {
-    padding-left: 30%;
+    padding-left: 20%;
     overflow: hidden;
     width: 75%;
 }
@@ -525,11 +525,6 @@ ul>li {
   min-width: 100px;
   padding: 10px;
   margin-left: 15%;
-}
-
-.submited-box {
-  display: none;
-  padding: 20px;
 }
 
 .submited-box .loader,

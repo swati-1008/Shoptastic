@@ -146,7 +146,7 @@
                         <h4 style="float: left; padding-left: 20px; margin-top: 5px;">{{ model_rating }} out of 5</h4>
                         <br>
                         <br>
-                        <h4 style="float: right; margin-top: 2px; margin-right: 20px;">from the Model</h4>
+                        <h4 style="float: right; margin-top: 2px; margin-right: 65px;">(from the Model)</h4>
                         <br>
                         <h5 style="float: left; margin-left: 100px">{{ total_ratings }} global ratings</h5>
                         <br>
@@ -212,6 +212,7 @@
                               </div>
                             </div>
                           
+                            <!-- Messages that come up when a star is clicked -->
                             <div class="feedback-tags">
                               <div class="tags-container" data-tag-set="1">
                                 <div class="question-tag">
@@ -249,13 +250,17 @@
                                 <input type="text" class="tag form-control" name="comment" id="inlineFormInputName" placeholder="please enter your review">
                                 <input type="hidden" name="product_id" />
                               </div>
+
+                              <p class="left" style="margin-left: -50px;">{{ required|safe }}</p>
                               
                             </div>
                           
+                            <!-- Add Review button -->
                             <div class="button-box">
                               <input type="submit" class=" done btn btn-warning" value="Add review" />
                             </div>
                           
+                            <!-- Thank You after Submit -->
                             <div class="submited-box">
                               <div class="loader"></div>
                               <div class="success-message">
@@ -293,12 +298,12 @@
                     <div>
                         <h4><i class="fas fa-user-circle" style="size: 25x; color: gray;"></i>&nbsp;&nbsp;{{ comment.uid }}</h4>
                         <div class="star-ratings-sprite" style="margin-left: 10px;">
-                            <span style="width:{{ comment.rating|mul:20|div:total_ratings }}%;" class="star-ratings-sprite-rating"></span>
+                            <span style="width:{{ comment.rating|mul:20 }}%;" class="star-ratings-sprite-rating"></span>
                         </div>
                         <br>
                         <br>
                         <p style="color: gray;">Reviewed in India on {{ comment.date }}</p>
-                        <p>{{ comment.comment }}</p>
+                        <p style="width: 60%;">{{ comment.comment }}</p>
                     </div>
                 {% endfor %}
             </div>
