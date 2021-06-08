@@ -10,17 +10,6 @@ from django.db.models import Count
 
 new_model = tf.keras.models.load_model('Machine learning models/stack.tf')
 
-
-# 3, The decor is fragile and needs a lot of nailing in the wall
-# 5, Very sturdy and looks good with my interior too
-# 1, The hooks come off as soon as I hang a single key on it. Pathetic sturdiness
-# 2, The size is not even measured as per the Android phones. It can just contain smaller phones
-# 4, Very great finish with the polish, and looks great with my interior decor
-# 3, The spaces are not well measured and half my things do not even fit
-
-
-
-
 def mdfwalldecor(request):
     rating = 0
     required = ''
@@ -30,21 +19,18 @@ def mdfwalldecor(request):
         data = request.POST.get('rate_value')
         cmt = request.POST.get('comment')
         if data and cmt:
-            print('Data and comment')
             predictions = new_model.predict([cmt])
             rating = np.argmax(predictions[0])
+            print(f'COMMENT = {cmt}, MODEL PREDICTED RATING = {rating}')
             comment = Comments(pid = 'FUR1', uid = request.user, comment = cmt, rating = data, date = date.today())
             comment.save()
         elif cmt:
-            print('comment')
             required = '<i class="fas fa-exclamation-triangle" style="color: orange;"></i>   Please provide a rating first to submit your review!'
         elif data:
-            print('data')
             comment = Comments(pid = 'FUR1', uid = request.user, rating = data, date = date.today())
             comment.save()
     fieldname = 'rating'
     rating_count = Comments.objects.filter(pid = 'FUR1').values(fieldname).order_by(fieldname).annotate(the_count = Count(fieldname))
-    print(Comments.objects.all())
     # print(rating_count)
     rate1 = 0
     rate2 = 0
@@ -86,17 +72,17 @@ def mdfwalldecor(request):
     model_star = model_rating * 20
     comments = Comments.objects.filter(pid='FUR1')
     row = Furniture.objects.get(product_id='FUR1')
-    features = list(Features.objects.filter(pid=row))
+    features = Features.objects.filter(pid=row)
     context = {
         'product_name': row.product_name,
         'product_specs': row.product_desc,
         'price': row.price,
         'color': row.colour,
-        'image1': row.image1,
-        'image2': row.image2,
-        'image3': row.image3,
-        'image4': row.image4,
-        'image5': row.image5,
+        'image1': '../static/images/furniture/mdfwalldecor/' + str(row.image1),
+        'image2': '../static/images/furniture/mdfwalldecor/' + str(row.image2),
+        'image3': '../static/images/furniture/mdfwalldecor/' + str(row.image3),
+        'image4': '../static/images/furniture/mdfwalldecor/' + str(row.image4),
+        'image5': '../static/images/furniture/mdfwalldecor/' + str(row.image5),
         'product_dimensions': row.product_dimensions,
         'assembly_required': row.assembly_required,
         'primary_material': row.primary_material,
@@ -108,7 +94,7 @@ def mdfwalldecor(request):
         'average_customer_rating': row.average_customer_rating,
         'best_sellers': row.best_sellers,
         'launch_date': row.launch_date,
-        'features': features,
+        'features': features[0],
         'comments': comments,
         'final_rating': row.average_customer_rating,
         'total_ratings': total_ratings,
@@ -134,20 +120,19 @@ def furniturecafestool(request):
         data = request.POST.get('rate_value')
         cmt = request.POST.get('comment')
         if data and cmt:
-            print('Data and comment')
             predictions = new_model.predict([cmt])
             rating = np.argmax(predictions[0])
+            print(f'COMMENT = {cmt}, MODEL PREDICTED RATING = {rating}')
             comment = Comments(pid = 'FUR2', uid = request.user, comment = cmt, rating = data, date = date.today())
             comment.save()
         elif cmt:
-            print('comment')
             required = '<i class="fas fa-exclamation-triangle" style="color: orange;"></i>   Please provide a rating first to submit your review!'
         elif data:
-            print('data')
             comment = Comments(pid = 'FUR2', uid = request.user, rating = data, date = date.today())
             comment.save()
     fieldname = 'rating'
     rating_count = Comments.objects.filter(pid = 'FUR2').values(fieldname).order_by(fieldname).annotate(the_count = Count(fieldname))
+    # print(rating_count)
     rate1 = 0
     rate2 = 0
     rate3 = 0
@@ -170,6 +155,7 @@ def furniturecafestool(request):
     total_comments = len(word_comments)
     # for i in word_comments:
     #     print(i.comment)
+    print(f'rate1 = {rate1}, rate2 = {rate2}, rate3 = {rate3}, rate4 = {rate4}, rate5 = {rate5}')
     final_rating = round((rating_sum / total_ratings), 2)
     prev_model_rating = Furniture.objects.get(product_id='FUR2').model_rating
     if rating != 0:
@@ -187,17 +173,17 @@ def furniturecafestool(request):
     model_star = model_rating * 20
     comments = Comments.objects.filter(pid='FUR2')
     row = Furniture.objects.get(product_id='FUR2')
-    features = list(Features.objects.filter(pid=row))
+    features = Features.objects.filter(pid=row)
     context = {
         'product_name': row.product_name,
         'product_specs': row.product_desc,
         'price': row.price,
         'color': row.colour,
-        'image1': row.image1,
-        'image2': row.image2,
-        'image3': row.image3,
-        'image4': row.image4,
-        'image5': row.image5,
+        'image1': '../static/images/furniture/mdfwalldecor/' + str(row.image1),
+        'image2': '../static/images/furniture/mdfwalldecor/' + str(row.image2),
+        'image3': '../static/images/furniture/mdfwalldecor/' + str(row.image3),
+        'image4': '../static/images/furniture/mdfwalldecor/' + str(row.image4),
+        'image5': '../static/images/furniture/mdfwalldecor/' + str(row.image5),
         'product_dimensions': row.product_dimensions,
         'assembly_required': row.assembly_required,
         'primary_material': row.primary_material,
@@ -209,7 +195,7 @@ def furniturecafestool(request):
         'average_customer_rating': row.average_customer_rating,
         'best_sellers': row.best_sellers,
         'launch_date': row.launch_date,
-        'features': features,
+        'features': features[0],
         'comments': comments,
         'final_rating': row.average_customer_rating,
         'total_ratings': total_ratings,
@@ -235,20 +221,19 @@ def woodkeyholder(request):
         data = request.POST.get('rate_value')
         cmt = request.POST.get('comment')
         if data and cmt:
-            print('Data and comment')
             predictions = new_model.predict([cmt])
             rating = np.argmax(predictions[0])
+            print(f'COMMENT = {cmt}, MODEL PREDICTED RATING = {rating}')
             comment = Comments(pid = 'FUR3', uid = request.user, comment = cmt, rating = data, date = date.today())
             comment.save()
         elif cmt:
-            print('comment')
             required = '<i class="fas fa-exclamation-triangle" style="color: orange;"></i>   Please provide a rating first to submit your review!'
         elif data:
-            print('data')
             comment = Comments(pid = 'FUR3', uid = request.user, rating = data, date = date.today())
             comment.save()
     fieldname = 'rating'
     rating_count = Comments.objects.filter(pid = 'FUR3').values(fieldname).order_by(fieldname).annotate(the_count = Count(fieldname))
+    # print(rating_count)
     rate1 = 0
     rate2 = 0
     rate3 = 0
@@ -271,6 +256,7 @@ def woodkeyholder(request):
     total_comments = len(word_comments)
     # for i in word_comments:
     #     print(i.comment)
+    print(f'rate1 = {rate1}, rate2 = {rate2}, rate3 = {rate3}, rate4 = {rate4}, rate5 = {rate5}')
     final_rating = round((rating_sum / total_ratings), 2)
     prev_model_rating = Furniture.objects.get(product_id='FUR3').model_rating
     if rating != 0:
@@ -288,17 +274,17 @@ def woodkeyholder(request):
     model_star = model_rating * 20
     comments = Comments.objects.filter(pid='FUR3')
     row = Furniture.objects.get(product_id='FUR3')
-    features = list(Features.objects.filter(pid=row))
+    features = Features.objects.filter(pid=row)
     context = {
         'product_name': row.product_name,
         'product_specs': row.product_desc,
         'price': row.price,
         'color': row.colour,
-        'image1': row.image1,
-        'image2': row.image2,
-        'image3': row.image3,
-        'image4': row.image4,
-        'image5': row.image5,
+        'image1': '../static/images/furniture/mdfwalldecor/' + str(row.image1),
+        'image2': '../static/images/furniture/mdfwalldecor/' + str(row.image2),
+        'image3': '../static/images/furniture/mdfwalldecor/' + str(row.image3),
+        'image4': '../static/images/furniture/mdfwalldecor/' + str(row.image4),
+        'image5': '../static/images/furniture/mdfwalldecor/' + str(row.image5),
         'product_dimensions': row.product_dimensions,
         'assembly_required': row.assembly_required,
         'primary_material': row.primary_material,
@@ -310,7 +296,7 @@ def woodkeyholder(request):
         'average_customer_rating': row.average_customer_rating,
         'best_sellers': row.best_sellers,
         'launch_date': row.launch_date,
-        'features': features,
+        'features': features[0],
         'comments': comments,
         'final_rating': row.average_customer_rating,
         'total_ratings': total_ratings,
@@ -336,20 +322,19 @@ def storagecase(request):
         data = request.POST.get('rate_value')
         cmt = request.POST.get('comment')
         if data and cmt:
-            print('Data and comment')
             predictions = new_model.predict([cmt])
             rating = np.argmax(predictions[0])
+            print(f'COMMENT = {cmt}, MODEL PREDICTED RATING = {rating}')
             comment = Comments(pid = 'FUR4', uid = request.user, comment = cmt, rating = data, date = date.today())
             comment.save()
         elif cmt:
-            print('comment')
             required = '<i class="fas fa-exclamation-triangle" style="color: orange;"></i>   Please provide a rating first to submit your review!'
         elif data:
-            print('data')
             comment = Comments(pid = 'FUR4', uid = request.user, rating = data, date = date.today())
             comment.save()
     fieldname = 'rating'
     rating_count = Comments.objects.filter(pid = 'FUR4').values(fieldname).order_by(fieldname).annotate(the_count = Count(fieldname))
+    # print(rating_count)
     rate1 = 0
     rate2 = 0
     rate3 = 0
@@ -372,6 +357,7 @@ def storagecase(request):
     total_comments = len(word_comments)
     # for i in word_comments:
     #     print(i.comment)
+    print(f'rate1 = {rate1}, rate2 = {rate2}, rate3 = {rate3}, rate4 = {rate4}, rate5 = {rate5}')
     final_rating = round((rating_sum / total_ratings), 2)
     prev_model_rating = Furniture.objects.get(product_id='FUR4').model_rating
     if rating != 0:
@@ -389,17 +375,17 @@ def storagecase(request):
     model_star = model_rating * 20
     comments = Comments.objects.filter(pid='FUR4')
     row = Furniture.objects.get(product_id='FUR4')
-    features = list(Features.objects.filter(pid=row))
+    features = Features.objects.filter(pid=row)
     context = {
         'product_name': row.product_name,
         'product_specs': row.product_desc,
         'price': row.price,
         'color': row.colour,
-        'image1': row.image1,
-        'image2': row.image2,
-        'image3': row.image3,
-        'image4': row.image4,
-        'image5': row.image5,
+        'image1': '../static/images/furniture/mdfwalldecor/' + str(row.image1),
+        'image2': '../static/images/furniture/mdfwalldecor/' + str(row.image2),
+        'image3': '../static/images/furniture/mdfwalldecor/' + str(row.image3),
+        'image4': '../static/images/furniture/mdfwalldecor/' + str(row.image4),
+        'image5': '../static/images/furniture/mdfwalldecor/' + str(row.image5),
         'product_dimensions': row.product_dimensions,
         'assembly_required': row.assembly_required,
         'primary_material': row.primary_material,
@@ -411,7 +397,7 @@ def storagecase(request):
         'average_customer_rating': row.average_customer_rating,
         'best_sellers': row.best_sellers,
         'launch_date': row.launch_date,
-        'features': features,
+        'features': features[0],
         'comments': comments,
         'final_rating': row.average_customer_rating,
         'total_ratings': total_ratings,
@@ -437,20 +423,19 @@ def wallmirror(request):
         data = request.POST.get('rate_value')
         cmt = request.POST.get('comment')
         if data and cmt:
-            print('Data and comment')
             predictions = new_model.predict([cmt])
             rating = np.argmax(predictions[0])
+            print(f'COMMENT = {cmt}, MODEL PREDICTED RATING = {rating}')
             comment = Comments(pid = 'FUR5', uid = request.user, comment = cmt, rating = data, date = date.today())
             comment.save()
         elif cmt:
-            print('comment')
             required = '<i class="fas fa-exclamation-triangle" style="color: orange;"></i>   Please provide a rating first to submit your review!'
         elif data:
-            print('data')
             comment = Comments(pid = 'FUR5', uid = request.user, rating = data, date = date.today())
             comment.save()
     fieldname = 'rating'
     rating_count = Comments.objects.filter(pid = 'FUR5').values(fieldname).order_by(fieldname).annotate(the_count = Count(fieldname))
+    # print(rating_count)
     rate1 = 0
     rate2 = 0
     rate3 = 0
@@ -473,6 +458,7 @@ def wallmirror(request):
     total_comments = len(word_comments)
     # for i in word_comments:
     #     print(i.comment)
+    print(f'rate1 = {rate1}, rate2 = {rate2}, rate3 = {rate3}, rate4 = {rate4}, rate5 = {rate5}')
     final_rating = round((rating_sum / total_ratings), 2)
     prev_model_rating = Furniture.objects.get(product_id='FUR5').model_rating
     if rating != 0:
@@ -490,17 +476,17 @@ def wallmirror(request):
     model_star = model_rating * 20
     comments = Comments.objects.filter(pid='FUR5')
     row = Furniture.objects.get(product_id='FUR5')
-    features = list(Features.objects.filter(pid=row))
+    features = Features.objects.filter(pid=row)
     context = {
         'product_name': row.product_name,
         'product_specs': row.product_desc,
         'price': row.price,
         'color': row.colour,
-        'image1': row.image1,
-        'image2': row.image2,
-        'image3': row.image3,
-        'image4': row.image4,
-        'image5': row.image5,
+        'image1': '../static/images/furniture/mdfwalldecor/' + str(row.image1),
+        'image2': '../static/images/furniture/mdfwalldecor/' + str(row.image2),
+        'image3': '../static/images/furniture/mdfwalldecor/' + str(row.image3),
+        'image4': '../static/images/furniture/mdfwalldecor/' + str(row.image4),
+        'image5': '../static/images/furniture/mdfwalldecor/' + str(row.image5),
         'product_dimensions': row.product_dimensions,
         'assembly_required': row.assembly_required,
         'primary_material': row.primary_material,
@@ -512,7 +498,7 @@ def wallmirror(request):
         'average_customer_rating': row.average_customer_rating,
         'best_sellers': row.best_sellers,
         'launch_date': row.launch_date,
-        'features': features,
+        'features': features[0],
         'comments': comments,
         'final_rating': row.average_customer_rating,
         'total_ratings': total_ratings,
@@ -538,20 +524,19 @@ def entunit(request):
         data = request.POST.get('rate_value')
         cmt = request.POST.get('comment')
         if data and cmt:
-            print('Data and comment')
             predictions = new_model.predict([cmt])
             rating = np.argmax(predictions[0])
+            print(f'COMMENT = {cmt}, MODEL PREDICTED RATING = {rating}')
             comment = Comments(pid = 'FUR6', uid = request.user, comment = cmt, rating = data, date = date.today())
             comment.save()
         elif cmt:
-            print('comment')
             required = '<i class="fas fa-exclamation-triangle" style="color: orange;"></i>   Please provide a rating first to submit your review!'
         elif data:
-            print('data')
             comment = Comments(pid = 'FUR6', uid = request.user, rating = data, date = date.today())
             comment.save()
     fieldname = 'rating'
     rating_count = Comments.objects.filter(pid = 'FUR6').values(fieldname).order_by(fieldname).annotate(the_count = Count(fieldname))
+    # print(rating_count)
     rate1 = 0
     rate2 = 0
     rate3 = 0
@@ -574,6 +559,7 @@ def entunit(request):
     total_comments = len(word_comments)
     # for i in word_comments:
     #     print(i.comment)
+    print(f'rate1 = {rate1}, rate2 = {rate2}, rate3 = {rate3}, rate4 = {rate4}, rate5 = {rate5}')
     final_rating = round((rating_sum / total_ratings), 2)
     prev_model_rating = Furniture.objects.get(product_id='FUR6').model_rating
     if rating != 0:
@@ -591,17 +577,17 @@ def entunit(request):
     model_star = model_rating * 20
     comments = Comments.objects.filter(pid='FUR6')
     row = Furniture.objects.get(product_id='FUR6')
-    features = list(Features.objects.filter(pid=row))
+    features = Features.objects.filter(pid=row)
     context = {
         'product_name': row.product_name,
         'product_specs': row.product_desc,
         'price': row.price,
         'color': row.colour,
-        'image1': row.image1,
-        'image2': row.image2,
-        'image3': row.image3,
-        'image4': row.image4,
-        'image5': row.image5,
+        'image1': '../static/images/furniture/mdfwalldecor/' + str(row.image1),
+        'image2': '../static/images/furniture/mdfwalldecor/' + str(row.image2),
+        'image3': '../static/images/furniture/mdfwalldecor/' + str(row.image3),
+        'image4': '../static/images/furniture/mdfwalldecor/' + str(row.image4),
+        'image5': '../static/images/furniture/mdfwalldecor/' + str(row.image5),
         'product_dimensions': row.product_dimensions,
         'assembly_required': row.assembly_required,
         'primary_material': row.primary_material,
@@ -613,7 +599,7 @@ def entunit(request):
         'average_customer_rating': row.average_customer_rating,
         'best_sellers': row.best_sellers,
         'launch_date': row.launch_date,
-        'features': features,
+        'features': features[0],
         'comments': comments,
         'final_rating': row.average_customer_rating,
         'total_ratings': total_ratings,

@@ -46,7 +46,12 @@ INSTALLED_APPS = [
     'Furniture',
     'Clothing',
     'mathfilters',
+    'django_extensions',
 ]
+
+GRAPH_MODELS = {
+  'app_labels': ["Mobiles"],
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

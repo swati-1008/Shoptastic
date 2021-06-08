@@ -36,7 +36,8 @@ table {
 
 .image {
   border-radius: 50%;
-  width: 250px;
+  width: 200px;
+  height: 200px;
 }
 
 @import url("https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:400,700&display=swap");

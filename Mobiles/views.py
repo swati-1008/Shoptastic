@@ -19,16 +19,14 @@ def oneplus(request):
         data = request.POST.get('rate_value')
         cmt = request.POST.get('comment')
         if data and cmt:
-            print('Data and comment')
             predictions = new_model.predict([cmt])
             rating = np.argmax(predictions[0])
+            print(f'COMMENT = {cmt}, MODEL PREDICTED RATING = {rating}')
             comment = Comments(pid = 'MOB1', uid = request.user, comment = cmt, rating = data, date = date.today())
             comment.save()
         elif cmt:
-            print('comment')
             required = '<i class="fas fa-exclamation-triangle" style="color: orange;"></i>   Please provide a rating first to submit your review!'
         elif data:
-            print('data')
             comment = Comments(pid = 'MOB1', uid = request.user, rating = data, date = date.today())
             comment.save()
     fieldname = 'rating'
@@ -128,16 +126,14 @@ def redmi9power(request):
         data = request.POST.get('rate_value')
         cmt = request.POST.get('comment')
         if data and cmt:
-            print('Data and comment')
             predictions = new_model.predict([cmt])
             rating = np.argmax(predictions[0])
+            print(f'COMMENT = {cmt}, MODEL PREDICTED RATING = {rating}')
             comment = Comments(pid = 'MOB2', uid = request.user, comment = cmt, rating = data, date = date.today())
             comment.save()
         elif cmt:
-            print('comment')
             required = '<i class="fas fa-exclamation-triangle" style="color: orange;"></i>   Please provide a rating first to submit your review!'
         elif data:
-            print('data')
             comment = Comments(pid = 'MOB2', uid = request.user, rating = data, date = date.today())
             comment.save()
     fieldname = 'rating'
@@ -237,16 +233,14 @@ def samsunggalaxym51(request):
         data = request.POST.get('rate_value')
         cmt = request.POST.get('comment')
         if data and cmt:
-            print('Data and comment')
             predictions = new_model.predict([cmt])
             rating = np.argmax(predictions[0])
+            print(f'COMMENT = {cmt}, MODEL PREDICTED RATING = {rating}')
             comment = Comments(pid = 'MOB3', uid = request.user, comment = cmt, rating = data, date = date.today())
             comment.save()
         elif cmt:
-            print('comment')
             required = '<i class="fas fa-exclamation-triangle" style="color: orange;"></i>   Please provide a rating first to submit your review!'
         elif data:
-            print('data')
             comment = Comments(pid = 'MOB3', uid = request.user, rating = data, date = date.today())
             comment.save()
     fieldname = 'rating'
@@ -346,16 +340,14 @@ def iphone12mini(request):
         data = request.POST.get('rate_value')
         cmt = request.POST.get('comment')
         if data and cmt:
-            print('Data and comment')
             predictions = new_model.predict([cmt])
             rating = np.argmax(predictions[0])
+            print(f'COMMENT = {cmt}, MODEL PREDICTED RATING = {rating}')
             comment = Comments(pid = 'MOB6', uid = request.user, comment = cmt, rating = data, date = date.today())
             comment.save()
         elif cmt:
-            print('comment')
             required = '<i class="fas fa-exclamation-triangle" style="color: orange;"></i>   Please provide a rating first to submit your review!'
         elif data:
-            print('data')
             comment = Comments(pid = 'MOB6', uid = request.user, rating = data, date = date.today())
             comment.save()
     fieldname = 'rating'
@@ -455,16 +447,14 @@ def nokia34(request):
         data = request.POST.get('rate_value')
         cmt = request.POST.get('comment')
         if data and cmt:
-            print('Data and comment')
             predictions = new_model.predict([cmt])
             rating = np.argmax(predictions[0])
+            print(f'COMMENT = {cmt}, MODEL PREDICTED RATING = {rating}')
             comment = Comments(pid = 'MOB4', uid = request.user, comment = cmt, rating = data, date = date.today())
             comment.save()
         elif cmt:
-            print('comment')
             required = '<i class="fas fa-exclamation-triangle" style="color: orange;"></i>   Please provide a rating first to submit your review!'
         elif data:
-            print('data')
             comment = Comments(pid = 'MOB4', uid = request.user, rating = data, date = date.today())
             comment.save()
     fieldname = 'rating'
@@ -564,16 +554,14 @@ def vivoy20(request):
         data = request.POST.get('rate_value')
         cmt = request.POST.get('comment')
         if data and cmt:
-            print('Data and comment')
             predictions = new_model.predict([cmt])
             rating = np.argmax(predictions[0])
+            print(f'COMMENT = {cmt}, MODEL PREDICTED RATING = {rating}')
             comment = Comments(pid = 'MOB5', uid = request.user, comment = cmt, rating = data, date = date.today())
             comment.save()
         elif cmt:
-            print('comment')
             required = '<i class="fas fa-exclamation-triangle" style="color: orange;"></i>   Please provide a rating first to submit your review!'
         elif data:
-            print('data')
             comment = Comments(pid = 'MOB5', uid = request.user, rating = data, date = date.today())
             comment.save()
     fieldname = 'rating'

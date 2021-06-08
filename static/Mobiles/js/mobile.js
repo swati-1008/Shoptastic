@@ -1,5 +1,3 @@
-//jshint esversion: 6
-
 // const csrftoken = Cookies.get('csrftoken');sour
 
 // document.getElementById('rating').addEventListener('click', function(e) {
